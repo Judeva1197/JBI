@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useRef } from "react";
+import { Inspection } from "../../components/Inspection";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
@@ -12,25 +13,12 @@ const navigationItems = [
 ];
 
 export const Contact = (): JSX.Element => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    propertyType: "",
-    message: "",
-  });
+  const inspectionFormRef = useRef<HTMLDivElement | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
+  const scrollToInspectionForm = () => {
+    if (inspectionFormRef.current) {
+      inspectionFormRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -140,151 +128,10 @@ export const Contact = (): JSX.Element => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="relative py-32 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-          {/* Form */}
-          <div className="flex-1">
-            <h2 
-              className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-6"
-              data-aos="fade-down"
-              data-aos-duration="500"
-            >
-              SEND US A MESSAGE
-            </h2>
-
-            <p 
-              className="[font-family:'Poppins',Helvetica] font-light text-black text-base sm:text-sm mb-10"
-              data-aos="fade-up"
-              data-aos-duration="700"
-            >
-              Fill out the form below and we'll get back to you as soon as possible.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div data-aos="fade-up" data-aos-duration="500">
-                <label className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-sm mb-2 block">
-                  FULL NAME *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#154060] transition-colors"
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div data-aos="fade-up" data-aos-duration="600">
-                  <label className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-sm mb-2 block">
-                    EMAIL *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#154060] transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div data-aos="fade-up" data-aos-duration="700">
-                  <label className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-sm mb-2 block">
-                    PHONE *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#154060] transition-colors"
-                    placeholder="0412 345 678"
-                  />
-                </div>
-              </div>
-
-              <div data-aos="fade-up" data-aos-duration="800">
-                <label className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-sm mb-2 block">
-                  PROPERTY TYPE
-                </label>
-                <select
-                  name="propertyType"
-                  value={formData.propertyType}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#154060] transition-colors"
-                >
-                  <option value="">Select property type</option>
-                  <option value="apartment">Apartment/Unit</option>
-                  <option value="house">House</option>
-                  <option value="townhouse">Townhouse</option>
-                  <option value="duplex">Duplex</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div data-aos="fade-up" data-aos-duration="900">
-                <label className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-sm mb-2 block">
-                  MESSAGE *
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#154060] transition-colors resize-none"
-                  placeholder="Tell us about your inspection needs..."
-                />
-              </div>
-
-              <Button 
-                type="submit"
-                data-aos="fade-up" 
-                data-aos-duration="1000"
-                className="w-full sm:w-auto px-12 py-6 bg-[#154060] text-white text-base transition-all ease-in-out duration-[360ms] hover:bg-[#1a5a82]"
-              >
-                SEND MESSAGE
-              </Button>
-            </form>
-          </div>
-
-          {/* Image */}
-          <div className="flex-1 lg:sticky lg:top-24">
-            <img
-              className="w-full rounded-[32px] object-cover shadow-xl"
-              alt="Contact"
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
-              data-aos="fade-left"
-              data-aos-duration="700"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="relative py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 
-            className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
-            data-aos="fade-down"
-            data-aos-duration="500"
-          >
-            OUR SERVICE AREA
-          </h2>
-          
-          <div 
-            className="w-full h-96 bg-gray-300 rounded-[10px] flex items-center justify-center"
-            data-aos="fade-up"
-            data-aos-duration="700"
-          >
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11380.957283013478!2d80.04294316714903!3d6.829422935013409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1763837816401!5m2!1sen!2slk" className="w-full h-96 rounded-[10px]"  style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+      {/* Inspection Form Section */}
+      <section className="relative py-20 px-4" id="inspection-form">
+        <div className="max-w-6xl mx-auto" ref={inspectionFormRef}>
+          <Inspection />
         </div>
       </section>
 
@@ -317,6 +164,7 @@ export const Contact = (): JSX.Element => {
             <Button 
               data-aos="fade-up" 
               data-aos-duration="900" 
+              onClick={scrollToInspectionForm}
               className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30"
             >
               BOOK NOW

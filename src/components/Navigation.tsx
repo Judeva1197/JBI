@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
@@ -14,11 +14,12 @@ interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
+  
   logoSrc = "/2381e0f2-52ae-4253-81da-16c35dfc62c3-1.png",
   textColor = "text-black",
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -27,6 +28,11 @@ export const Navigation: React.FC<NavigationProps> = ({
     setIsMenuOpen(false);
   };
 
+  const redirectToInspectionForm = () => {
+    window.location.href = '/contact#inspection-form';
+  }
+
+   
   return (
     <>
       {/* Desktop Navigation - Original Layout */}
@@ -52,7 +58,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         </nav>
 
         {/* Desktop Book Now Button */}
-        <Button className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+        <Button onClick={redirectToInspectionForm}  className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30">
           BOOK NOW
         </Button>
     </div>

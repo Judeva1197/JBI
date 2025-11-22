@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
+import { Inspection } from "../../components/Inspection";
 import { Navigation } from "../../components/Navigation";
 
 const navigationItems = [
@@ -14,8 +15,15 @@ const navigationItems = [
 export const Home = (): JSX.Element => {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
+  const inspectionFormRef = useRef<HTMLDivElement | null>(null);
   const [imageStyle, setImageStyle] = useState<React.CSSProperties>({});
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  const scrollToInspectionForm = () => {
+    if (inspectionFormRef.current) {
+      inspectionFormRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,7 +111,7 @@ export const Home = (): JSX.Element => {
               Sydney-wide | Licensed Builder | Detailed Reports | Fast Turnaround
             </p>
 
-            <Button data-aos="fade-up" data-aos-duration="1500" className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+            <Button data-aos="fade-up" data-aos-duration="1500" onClick={scrollToInspectionForm} className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30">
               BOOK AN INSPECTION
             </Button>
           </div>
@@ -491,11 +499,11 @@ export const Home = (): JSX.Element => {
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
                   <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      UNITS/APARTMENTS (GENERIC)
+                      Townhouses
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
                     <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $450
+                      $500
                     </p>
                   </CardContent>
                 </Card>
@@ -503,11 +511,11 @@ export const Home = (): JSX.Element => {
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
                   <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      UNITS/APARTMENTS (GENERIC)
+                      Houses (small)
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
                     <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $450
+                      $550
                     </p>
                   </CardContent>
                 </Card>
@@ -515,11 +523,11 @@ export const Home = (): JSX.Element => {
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
                   <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      UNITS/APARTMENTS (GENERIC)
+                      Houses (medium–large)
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
                     <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $450
+                      $600
                     </p>
                   </CardContent>
                 </Card>
@@ -527,11 +535,11 @@ export const Home = (): JSX.Element => {
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
                   <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      UNITS/APARTMENTS (GENERIC)
+                      Dilapidation Reports
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
                     <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $450
+                      $650
                     </p>
                   </CardContent>
                 </Card>
@@ -567,6 +575,13 @@ export const Home = (): JSX.Element => {
         </div>
       </section>
 
+      {/* Inspection form (inserted before CTA) */}
+      <section className="relative py-32 px-4">
+        <div className="max-w-6xl mx-auto">
+          <Inspection ref={inspectionFormRef} />
+        </div>
+      </section>
+
       <section className="relative px-6 lg:px-20 my-20">
         <div className="relative w-full bg-[#154060] rounded-[15px] overflow-hidden">
           <img
@@ -585,7 +600,7 @@ export const Home = (): JSX.Element => {
               Reliable Property Assessments Expertise You Can Count On
             </h2>
 
-            <Button data-aos="fade-up" data-aos-duration="500" className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+            <Button data-aos="fade-up" data-aos-duration="500" onClick={scrollToInspectionForm} className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30">
               BOOK AN INSPECTION
             </Button>
 
