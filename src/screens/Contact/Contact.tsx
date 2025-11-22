@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Navigation } from "../../components/Navigation";
 
 const navigationItems = [
   { label: "HOME", href: "/" },
@@ -41,30 +42,8 @@ export const Contact = (): JSX.Element => {
       >
         <div className="absolute inset-0 bg-black/40"></div>
         
-        <div className="relative z-10 max-w-full mx-auto px-20 py-12 flex flex-col gap-10">
-          <div className="flex flex-wrap items-center justify-between px-24">
-            <img
-              className="w-32 h-auto object-contain"
-              alt="Element"
-              src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-1.png"
-            />
-
-            <nav className="flex flex-wrap items-center justify-center gap-6 pb-6">
-              {navigationItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.href}
-                  className="[font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[normal] hover:text-cyan-300 hover:tracking-wide transition-opacity ease-in-out duration-[360ms]"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
-            <Button className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30">
-              BOOK NOW
-            </Button>
-          </div>
+        <div className="relative z-10 max-w-full mx-auto px-2 lg:px-20 py-12 flex flex-col gap-10">
+          <Navigation textColor="text-white" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16 px-2">
             <h1 
@@ -312,7 +291,7 @@ export const Contact = (): JSX.Element => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative px-20 my-20">
+      <section className="relative px-2 lg:px-20 my-20">
         <div className="relative w-full bg-[#154060] rounded-[15px] overflow-hidden">
           <img
             className="absolute inset-0 w-full h-full rounded-[32px] object-cover opacity-40"

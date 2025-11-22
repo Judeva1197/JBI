@@ -7,7 +7,7 @@ import { Navigation } from "../../components/Navigation";
 const navigationItems = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
-  { label: "CONTACT US", href: "#contact" },
+  { label: "CONTACT US", href: "/contact" },
 ];
 
 const whyChooseUsPoints = [
@@ -214,7 +214,7 @@ export const About = (): JSX.Element => {
               <img
                 className="w-full rounded-[10px] object-cover"
                 alt="Eddy - Licensed Builder"
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop"
+                src="/owner.jpeg"
               />
             </GlareHover>
           </div>
