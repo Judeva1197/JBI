@@ -91,7 +91,7 @@ export const About = (): JSX.Element => {
       </section>
 
       {/* About JBI Section */}
-      <section className="relative py-32 px-4">
+      <section className="relative py-6 lg:py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <GlareHover
@@ -104,7 +104,7 @@ export const About = (): JSX.Element => {
               className=""
             >
               <img
-                className="w-full rounded-[32px] object-cover"
+                className="w-full rounded-[10px] object-cover"
                 alt="Building inspection"
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"
               />
@@ -146,7 +146,7 @@ export const About = (): JSX.Element => {
       </section>
 
       {/* About Eddy Section */}
-      <section className="relative py-32 px-4 bg-gray-50">
+      <section className="relative py-6 lg:py-32 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -212,7 +212,7 @@ export const About = (): JSX.Element => {
               className=""
             >
               <img
-                className="w-full rounded-[32px] object-cover"
+                className="w-full rounded-[10px] object-cover"
                 alt="Eddy - Licensed Builder"
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop"
               />
@@ -370,7 +370,7 @@ export const About = (): JSX.Element => {
       </section>
 
       {/* Tools & Technology Section */}
-      <section className="relative py-32 px-4">
+      <section className="relative py-6 lg:py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
@@ -401,7 +401,7 @@ export const About = (): JSX.Element => {
       </section>
 
       {/* Mission Statement Section */}
-      <section className="relative px-20 my-20">
+      <section className="relative px-6 lg:px-20 my-20">
         <div className="relative w-full bg-[#154060] rounded-[15px] overflow-hidden">
           <img
             className="absolute inset-0 w-full h-full rounded-[32px] object-cover opacity-20"

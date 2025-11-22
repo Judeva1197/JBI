@@ -110,7 +110,7 @@ export const Home = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="relative py-32 px-4">
+      <section className="relative py-6 lg:py-32 px-4">
         <div className="max-w-5xl mx-auto">
           <h2 
             className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-4"
@@ -217,7 +217,7 @@ export const Home = (): JSX.Element => {
       </section>
 
       <section
-        className="relative w-full  py-16 text-white bg-contain bg-center"
+        className="relative w-full  py-16 text-white bg-cover lg:bg-center min-h-[100vh]"
         style={{ backgroundImage: "url('/untitled-design--22--1.png')" ,backgroundRepeat:"no-repeat",backgroundAttachment:"fixed"}}
       >
         <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col gap-12">
@@ -463,7 +463,7 @@ export const Home = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="relative py-20 px-4">
+      <section className="relative py-6 lg:py-20 px-4">
         <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row gap-10 lg:gap-16 items-start">
           <div ref={contentRef} className="flex-1 text-center lg:text-right">
             <h2 
@@ -477,7 +477,7 @@ export const Home = (): JSX.Element => {
 
             <div className="grid gap-8">
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
                       UNITS/APARTMENTS (GENERIC)
                     </h3>
@@ -489,7 +489,7 @@ export const Home = (): JSX.Element => {
                 </Card>
 
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
                       UNITS/APARTMENTS (GENERIC)
                     </h3>
@@ -501,7 +501,7 @@ export const Home = (): JSX.Element => {
                 </Card>
 
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
                       UNITS/APARTMENTS (GENERIC)
                     </h3>
@@ -513,7 +513,7 @@ export const Home = (): JSX.Element => {
                 </Card>
 
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
                       UNITS/APARTMENTS (GENERIC)
                     </h3>
@@ -525,7 +525,7 @@ export const Home = (): JSX.Element => {
                 </Card>
 
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
                     <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
                       UNITS/APARTMENTS (GENERIC)
                     </h3>
@@ -567,7 +567,7 @@ export const Home = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="relative px-20 my-20">
+      <section className="relative px-6 lg:px-20 my-20">
         <div className="relative w-full bg-[#154060] rounded-[15px] overflow-hidden">
           <img
             className="absolute inset-0 w-full h-full rounded-[32px] object-cover"
