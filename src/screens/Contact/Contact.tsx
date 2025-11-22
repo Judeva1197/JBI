@@ -279,13 +279,11 @@ export const Contact = (): JSX.Element => {
           </h2>
           
           <div 
-            className="w-full h-96 bg-gray-300 rounded-[32px] flex items-center justify-center"
+            className="w-full h-96 bg-gray-300 rounded-[10px] flex items-center justify-center"
             data-aos="fade-up"
             data-aos-duration="700"
           >
-            <p className="[font-family:'Inter',Helvetica] font-medium text-gray-600 text-xl">
-              Map Placeholder - Sydney Wide Coverage
-            </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11380.957283013478!2d80.04294316714903!3d6.829422935013409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1763837816401!5m2!1sen!2slk" className="w-full h-96 rounded-[10px]"  style={{ border: "0" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </section>
