@@ -1,98 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
+import GlareHover from "../../components/ReactBit/GlareHoverEffect";
+import { Navigation } from "../../components/Navigation";
 
 const navigationItems = [
-  { label: "HOME", href: "#" },
-  { label: "ABOUT US", href: "#about" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT US", href: "/about" },
   { label: "CONTACT US", href: "#contact" },
-];
-
-const services = [
-  {
-    image: "/untitled--300-x-400-px-.png",
-    title: "Pre-purchase Building Inspections",
-    description:
-      "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.",
-  },
-  {
-    image: "/untitled--300-x-400-px---1-.png",
-    title: "Pre-sale Vendor Inspections",
-    description:
-      "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.",
-  },
-  {
-    image: "/untitled--300-x-400-px---2-.png",
-    title: "Dilapidation Reports",
-    description:
-      "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.",
-  },
-];
-
-const whyChooseUsFeatures = [
-  {
-    icon: "/booking.png",
-    label: "EASY BOOKING",
-  },
-  {
-    icon: "/license.png",
-    label: "LICENSED BUILDER",
-  },
-  {
-    icon: "/report.png",
-    label: "DETAILED REPORTING",
-  },
-  {
-    icon: "/back-in-time.png",
-    label: "FAST TURNAROUND",
-  },
-  {
-    icon: "/trust.png",
-    label: "TRUSTED & PROFESSIONAL",
-  },
-  {
-    icon: "/thermal-imager.png",
-    label: "THERMAL IMAGING",
-  },
-];
-
-const inspectionIncludes = [
-  "full Internal & External Inspection",
-  "roof Space (where Accessible)",
-  "moisture Testing",
-  "structural Observations",
-  "safety Hazards & Major Defects",
-  "photographic Evidenc",
-  "same-day Report Option",
-];
-
-const pricingCards = [
-  {
-    title: "UNITS/APARTMENTS (GENERIC)",
-    price: "$450",
-  },
-  {
-    title: "UNITS/APARTMENTS (GENERIC)",
-    price: "$450",
-  },
-  {
-    title: "UNITS/APARTMENTS (GENERIC)",
-    price: "$450",
-  },
-  {
-    title: "UNITS/APARTMENTS (GENERIC)",
-    price: "$450",
-  },
-  {
-    title: "UNITS/APARTMENTS (GENERIC)",
-    price: "$450",
-  },
 ];
 
 export const Home = (): JSX.Element => {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const [imageStyle, setImageStyle] = useState<React.CSSProperties>({});
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,234 +23,552 @@ export const Home = (): JSX.Element => {
 
       const contentRect = contentRef.current.getBoundingClientRect();
       const imageContainerRect = imageContainerRef.current.getBoundingClientRect();
+      const sectionElement = contentRef.current.parentElement;
+      if (!sectionElement) return;
 
-      const stickyTop = 46;
-      const stopPoint = contentRect.bottom - imageContainerRect.height - stickyTop;
+      const sectionRect = sectionElement.getBoundingClientRect();
+      const stickyTop = 96; // 24 * 4 = 96px (top-24 equivalent)
+      const imageHeight = imageContainerRect.height;
+      
+      // Calculate when image should stop being sticky
+      // When section bottom reaches the point where image would naturally end
+      // This happens when: sectionBottom <= imageHeight + stickyTop
+      const sectionBottom = sectionRect.bottom;
+      const stopStickyPoint = imageHeight + stickyTop;
 
       if (window.innerWidth >= 1024) {
-        if (contentRect.top <= stickyTop && stopPoint > 0) {
+        // lg breakpoint
+        // Start being sticky when content top reaches stickyTop
+        // Stop being sticky when section bottom reaches or passes stopStickyPoint
+        const shouldBeSticky = contentRect.top <= stickyTop && sectionBottom > stopStickyPoint;
+        
+        if (shouldBeSticky) {
+          // Sticky position - image stays fixed while content scrolls
           setImageStyle({
             position: "fixed",
             top: `${stickyTop}px`,
             width: imageContainerRect.width,
-          });
-        } else if (stopPoint <= 0) {
-          setImageStyle({
-            position: "absolute",
-            bottom: "0",
-            width: "100%",
+            left: imageContainerRect.left,
           });
         } else {
+          // End reached or not yet sticky - image scrolls with content
           setImageStyle({
             position: "relative",
             top: "auto",
             width: "100%",
+            left: "auto",
           });
         }
       } else {
+        // Mobile - no sticky behavior
         setImageStyle({});
       }
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+      handleScroll();
+    };
+
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <div className="bg-white w-full relative overflow-x-hidden">
+    <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       <section
-        className="relative w-full min-h-[100vh] text-white bg-contain bg-center"
-        style={{ backgroundImage: "url('/untitled-design--19--1.png')" }}
+        className="relative w-full min-h-[100vh] text-white bg-cover lg:bg-contain bg-center"
+        style={{ backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/untitled-design--19--1.png'}')` }}
       >
-        <div className="relative z-10 max-w-full mx-auto px-20 py-12 flex flex-col gap-10">
-          <div className="flex flex-wrap items-center justify-between px-24">
-            <img
-              className="w-32 h-auto object-contain"
-              alt="Element"
-              src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-1.png"
-            />
-
-            <nav className=" flex flex-wrap items-center justify-center gap-6">
-              {navigationItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="[font-family:'Inter',Helvetica] font-medium text-black text-sm tracking-[0] leading-[normal] hover:opacity-80 transition-opacity"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-
-            <Button
-              variant="outline"
-              className="min-w-[120px] bg-white/10 border border-white text-white text-sm hover:bg-white/20"
-            >
-              BOOK NOW
-            </Button>
-          </div>
+        <div className="relative z-10 max-w-full mx-auto py-12 flex flex-col gap-10">
+          <Navigation textColor="text-black" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16  px-2">
-            <h1 className="[font-family:'Inter',Helvetica] font-bold text-white text-4xl sm:text-5xl lg:text-[64px] leading-tight max-w-4xl">
+            <h1 
+              className="[font-family:'Inter',Helvetica] font-bold text-white text-4xl sm:text-5xl lg:text-[64px] leading-tight max-w-4xl"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
               PROFESSIONAL BUILDING INSPECTIONS YOU CAN TRUST
             </h1>
 
-            <p className="[font-family:'Poppins',Helvetica] font-light text-white text-lg sm:text-xl">
+            <p className="[font-family:'Poppins',Helvetica] font-light text-white text-lg sm:text-sm" data-aos="fade-up" data-aos-duration="1000">
               Sydney-wide | Licensed Builder | Detailed Reports | Fast Turnaround
             </p>
 
-            <Button className="w-full max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg hover:bg-white/30">
+            <Button data-aos="fade-up" data-aos-duration="1500" className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30">
               BOOK AN INSPECTION
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="relative py-16 px-4">
+      <section className="relative py-32 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-4">
+          <h2 
+            className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-4"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="500"
+          >
           SERVICES WE OFFERED
           </h2>
 
-          <p className="text-center [font-family:'Poppins',Helvetica] font-light text-base sm:text-xl text-[#154060] tracking-[0] leading-[normal] mb-12">
+          <p data-aos="fade-up" data-aos-duration="1000" className="text-center [font-family:'Poppins',Helvetica] font-light text-base sm:text-sm text-[#154060] tracking-[0] leading-[normal] mb-12">
             Sydney-wide | Licensed Builder | Detailed Reports | Fast Turnaround
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <Card key={index} className="border-0 shadow-none">
+            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="0" className="border-0 shadow-none">
               <CardContent className="p-0">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
                 <img
-                  className="w-full h-full object-cover mb-5 rounded-xl"
-                  alt={service.title}
-                  src={service.image}
+                  className="w-full h-full object-cover mb-5"
+                  alt="Pre-purchase Building Inspections"
+                  src="/untitled--300-x-400-px-.png"
                 />
-                <h3 className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4">
-                  {service.title}
+              </GlareHover>
+                <h3 
+                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
+                  
+                >
+                  Pre-purchase Building Inspections
                 </h3>
                 <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                  {service.description}
+                  Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
                 </p>
               </CardContent>
             </Card>
-          ))}
+
+            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" className="border-0 shadow-none">
+              <CardContent className="p-0">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-full h-full object-cover mb-5"
+                  alt="Pre-sale Vendor Inspections"
+                  src="/untitled--300-x-400-px---1-.png"
+                />
+              </GlareHover>
+                <h3 
+                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
+                  
+                >
+                  Pre-sale Vendor Inspections
+                </h3>
+                <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
+                  Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000" className="border-0 shadow-none">
+              <CardContent className="p-0">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-full h-full object-cover mb-5"
+                  alt="Dilapidation Reports"
+                  src="/untitled--300-x-400-px---2-.png"
+                />
+              </GlareHover>
+                <h3 
+                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
+                  
+                >
+                  Dilapidation Reports
+                </h3>
+                <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
+                  Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+                </p>
+              </CardContent>
+            </Card>
         </div>
       </section>
 
       <section
-        className="relative w-full py-16 text-white bg-contain bg-center"
-        style={{ backgroundImage: "url('/untitled-design--22--1.png')" ,backgroundRepeat:"no-repeat"}}
+        className="relative w-full  py-16 text-white bg-contain bg-center"
+        style={{ backgroundImage: "url('/untitled-design--22--1.png')" ,backgroundRepeat:"no-repeat",backgroundAttachment:"fixed"}}
       >
         <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col gap-12">
-          <div className="max-w-xl">
-            <h2 className="[font-family:'Inter',Helvetica] font-semibold text-3xl sm:text-5xl leading-tight mb-6">
+          <div className="max-w-full flex justify-center items-center flex-col">
+            <h2 
+              className="[font-family:'Inter',Helvetica] font-semibold text-3xl sm:text-5xl text-center leading-tight mb-6"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
               WHY CHOOSE US
             </h2>
 
-            <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-xl">
+            <p data-aos="fade-up" data-aos-duration="1000" className="[font-family:'Poppins',Helvetica] font-light text-center text-base sm:text-sm">
               Sydney-wide | Licensed Builder | Detailed Reports | Fast Turnaround
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {whyChooseUsFeatures.map((feature, index) => (
-              <div key={index} className="flex flex-col items-center text-center gap-5">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
                 <img
                   className="w-20 h-20 object-cover"
-                  alt={feature.label}
-                  src={feature.icon}
+                  alt="EASY BOOKING"
+                  src="/booking.png"
                 />
-                <p className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
-                  {feature.label}
+              </GlareHover>
+                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                  Easy Booking
                 </p>
               </div>
-            ))}
+
+              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-20 h-20 object-cover"
+                  alt="LICENSED BUILDER"
+                  src="/license.png"
+                />
+              </GlareHover>
+                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                  
+                  Licensed Builder
+                </p>
+              </div>
+
+              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-20 h-20 object-cover"
+                  alt="DETAILED REPORTING"
+                  src="/report.png"
+                />
+              </GlareHover>
+                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+
+                  Detailed Reporting
+                </p>
+              </div>
+
+              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-20 h-20 object-cover"
+                  alt="FAST TURNAROUND"
+                  src="/back-in-time.png"
+                />
+              </GlareHover>
+                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                 
+                  Fast Turnaround
+                </p>
+              </div>
+
+              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-20 h-20 object-cover"
+                  alt="TRUSTED & PROFESSIONAL"
+                  src="/trust.png"
+                />
+              </GlareHover>
+                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                
+                  Trusted & Professional
+                </p>
+              </div>
+
+              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-20 h-20 object-cover"
+                  alt="THERMAL IMAGING"
+                  src="/thermal-imager.png"
+                />
+              </GlareHover>
+                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                 
+                  Thermal Imaging
+                </p>
+              </div>
           </div>
         </div>
       </section>
 
-      <section className="relative py-20 px-4">
+      <section className="relative py-32 px-4">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+
+        <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+        >
           <img
             className="w-full max-w-xl rounded-[32px] object-cover"
             alt="Untitled design"
             src="/untitled-design--24--1.png"
           />
 
+        </GlareHover>
+
           <div className="flex-1">
-            <h2 className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-8">
+            <h2 
+              className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-8"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
               WHAT&apos;S INCLUDED IN AN INSPECTION
             </h2>
 
             <ul className="space-y-2">
-              {inspectionIncludes.map((item, index) => (
                 <li
-                  key={index}
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-2xl tracking-[0] leading-[normal]"
+                data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • {item}
+                  • full Internal & External Inspection
                 </li>
-              ))}
+                <li
+                data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="600"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                >
+                  • roof Space (where Accessible)
+                </li>
+                <li
+                data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="700"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                >
+                  • moisture Testing
+                </li>
+                <li
+                data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="800"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                >
+                  • structural Observations
+                </li>
+                <li
+                data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="900"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                >
+                  • safety Hazards & Major Defects
+                </li>
+                <li
+                data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="1000"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                >
+                  • photographic Evidenc
+                </li>
+                <li
+                data-aos="fade-left"
+              data-aos-easing="linear"
+              data-aos-duration="1100"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                >
+                  • same-day Report Option
+                </li>
             </ul>
           </div>
         </div>
       </section>
 
       <section className="relative py-20 px-4">
-  <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row gap-10 lg:gap-16 items-start">
-    <div ref={contentRef}  className="flex-1 text-center lg:text-right">
-      <h2 className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12">
-        PRE-PURCHASE & PRE-SALE INSPECTIONS
-      </h2>
+        <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row gap-10 lg:gap-16 items-start">
+          <div ref={contentRef} className="flex-1 text-center lg:text-right">
+            <h2 
+              className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
+              PRE-PURCHASE & PRE-SALE INSPECTIONS
+            </h2>
 
-      <div className="grid gap-8">
-        {pricingCards.map((card, index) => (
-          <Card
-            key={index}
-            className="relative border-0 shadow-none overflow-hidden bg-transparent"
-          >
-            <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
-              <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4">
-                {card.title}
-              </h3>
-              <p className="[font-family:'Poppins',Helvetica] font-normal text-base">FROM</p>
-              <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px]">
-                {card.price}
-              </p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+            <div className="grid gap-8">
+                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                      UNITS/APARTMENTS (GENERIC)
+                    </h3>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $450
+                    </p>
+                  </CardContent>
+                </Card>
 
-      <p className="[font-family:'Poppins',Helvetica] font-normal text-black text-sm sm:text-base tracking-[0] leading-[normal] mt-10">
-        *Final price depends on property size, condition and access. Full
-        quote confirmed instantly when booking.
-      </p>
-    </div>
+                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                      UNITS/APARTMENTS (GENERIC)
+                    </h3>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $450
+                    </p>
+                  </CardContent>
+                </Card>
 
-    <div className="w-full lg:w-auto lg:flex-1 lg:self-start relative" style={{ minHeight: '400px' }}>
-          <div ref={imageContainerRef} style={imageStyle}>
-            <img
-              className="w-full max-w-xl rounded-[32px] object-cover "
-              alt="Property inspection professional examining a home"
-              src="/untitled-design--25--1.png"
-            />
+                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                      UNITS/APARTMENTS (GENERIC)
+                    </h3>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $450
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                      UNITS/APARTMENTS (GENERIC)
+                    </h3>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $450
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                  <CardContent className="p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                      UNITS/APARTMENTS (GENERIC)
+                    </h3>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $450
+                    </p>
+                  </CardContent>
+                </Card>
+            </div>
+
+            <p className="[font-family:'Poppins',Helvetica] font-normal text-black text-sm sm:text-base tracking-[0] leading-[normal] mt-10">
+              *Final price depends on property size, condition and access. Full
+              quote confirmed instantly when booking.
+            </p>
+          </div>
+
+          <div className="w-full lg:w-auto lg:flex-1 lg:self-start relative">
+            <div ref={imageContainerRef} style={imageStyle}>
+
+            <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+            >
+              <img
+                className="w-full max-w-xl rounded-[32px] object-cover"
+                alt="Untitled design"
+                src="/untitled-design--25--1.png"
+              />
+
+</GlareHover>
+            </div>
           </div>
         </div>
+      </section>
 
-    
-  </div>
-</section>
-
-      <section className="relative px-4 my-20">
-        <div className="relative w-full bg-[#154060] rounded-[32px] overflow-hidden">
+      <section className="relative px-20 my-20">
+        <div className="relative w-full bg-[#154060] rounded-[15px] overflow-hidden">
           <img
             className="absolute inset-0 w-full h-full rounded-[32px] object-cover"
             alt="Abbe sublett"
@@ -335,15 +576,20 @@ export const Home = (): JSX.Element => {
           />
 
           <div className="relative z-10 flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
-            <h2 className="[font-family:'Inter',Helvetica] font-medium text-white text-3xl sm:text-5xl leading-tight max-w-4xl">
+            <h2 
+              className="[font-family:'Inter',Helvetica] font-medium text-white text-3xl sm:text-5xl uppercase max-w-4xl"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
               Reliable Property Assessments Expertise You Can Count On
             </h2>
 
-            <Button className="w-full max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-base hover:bg-white/30">
-              BOOK YOUR INSPECTION
+            <Button data-aos="fade-up" data-aos-duration="500" className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+              BOOK AN INSPECTION
             </Button>
 
-            <p className="[font-family:'Inter',Helvetica] font-light text-white text-sm sm:text-base tracking-[0] leading-[normal]">
+            <p data-aos="fade-up" data-aos-duration="1000" className="[font-family:'Inter',Helvetica] font-light text-white text-sm sm:text-sm tracking-[0] leading-[normal]">
               AVAILABLE MONDAY–SATURDAY | LICENSED & INSURED
             </p>
           </div>
@@ -351,27 +597,70 @@ export const Home = (): JSX.Element => {
       </section>
 
       <footer className="w-full bg-[#154060] text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16 flex flex-col gap-6">
-          <img
-            className="w-56 sm:w-72 h-auto object-contain"
-            alt="Element"
-            src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-2.png"
-          />
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          
 
-          <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-xl">
-            • EMAIL: INSPECTIONS@JUDEVA.COM.AU
-            <br />• PHONE 0432 800 928
-            <br />• BUTTON: &quot;ENQUIRE NOW&quot;
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+
+            <div className="flex flex-col mt-[-35px]">
+              <img
+                className="w-56 sm:w-72 h-auto object-contain "
+                alt="Element"
+                src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-2.png"
+              />
+              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm" >Judeva Building Inspections (JBI) is a Sydney-based inspection service specialising in pre-purchase building inspections, moisture & water ingress diagnostics, thermal imaging and detailed</p>
+            </div>
+
+            {/* Contact Column */}
+            <div className="flex flex-col gap-4">
+              <h3 
+                className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
+                
+              >
+                CONTACT
+              </h3>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
+                EMAIL: INSPECTIONS@JUDEVA.COM.AU
+              </p>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
+                PHONE: 0432 800 928
+              </p>
+              <Button className="w-fit mt-2 bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+                ENQUIRE NOW
+              </Button>
+            </div>
+
+            {/* Navigation Column */}
+            <div className="flex flex-col gap-4">
+              <h3 
+                className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
+               
+              >
+                NAVIGATION
+              </h3>
+              <nav className="flex flex-col gap-3">
+                {navigationItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.href}
+                    className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm hover:opacity-80 transition-opacity ease-in-out duration-[360ms]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+          </div>
         </div>
 
-        <div className="w-full bg-[#011947] flex flex-col sm:flex-row items-center justify-between gap-2 px-6 py-4 text-sm sm:text-base">
+        <div className="w-full bg-[#012D48] flex flex-col sm:flex-row items-center justify-between gap-2 px-6 py-4 text-sm sm:text-xs">
           <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
             COPYRIGHT @ JUDEVA PTY LTD
           </p>
 
           <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
-            DESIGN BY WEBASI
+            DESIGN BY <a href="https://webasi.co/" className="text-cyan-500"> WEBASI </a>
           </p>
         </div>
       </footer>
