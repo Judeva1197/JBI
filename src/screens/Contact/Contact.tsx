@@ -184,7 +184,7 @@ export const Contact = (): JSX.Element => {
                 src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-1.png"
               />
               <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                Judeva Building Inspections (JBI) is a Sydney-based inspection service specialising in pre-purchase building inspections, moisture & water ingress diagnostics, thermal imaging and detailed
+                Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.
               </p>
             </div>
 

@@ -159,7 +159,7 @@ export const Home = (): JSX.Element => {
                   Pre-purchase Building Inspections
                 </h3>
                 <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                  Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+                  A pre-purchase building inspection provides a detailed assessment of the property’s structural integrity and overall safety before you buy.
                 </p>
               </CardContent>
             </Card>
@@ -188,7 +188,7 @@ export const Home = (): JSX.Element => {
                   Pre-sale Vendor Inspections
                 </h3>
                 <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                  Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+                  A pre-sale vendor inspection thoroughly assesses the structural integrity, safety, and functionality of your property before it goes to market.
                 </p>
               </CardContent>
             </Card>
@@ -217,7 +217,7 @@ export const Home = (): JSX.Element => {
                   Dilapidation Reports
                 </h3>
                 <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                  Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+                 A dilapidation report documents the current condition of a property and its surrounding structures before construction or excavation work begins.
                 </p>
               </CardContent>
             </Card>
@@ -416,7 +416,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="500"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • full Internal & External Inspection
+                  • Full Internal & External Inspection
                 </li>
                 <li
                 data-aos="fade-left"
@@ -424,7 +424,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="600"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • roof Space (where Accessible)
+                  • Roof Space (where Accessible)
                 </li>
                 <li
                 data-aos="fade-left"
@@ -432,7 +432,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="700"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • moisture Testing
+                  • Moisture Testing
                 </li>
                 <li
                 data-aos="fade-left"
@@ -440,7 +440,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="800"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • structural Observations
+                  • Structural Observations
                 </li>
                 <li
                 data-aos="fade-left"
@@ -448,7 +448,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="900"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • safety Hazards & Major Defects
+                  • Safety Hazards & Major Defects
                 </li>
                 <li
                 data-aos="fade-left"
@@ -456,7 +456,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="1000"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • photographic Evidenc
+                  • Photographic Evidenc
                 </li>
                 <li
                 data-aos="fade-left"
@@ -464,7 +464,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="1100"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • same-day Report Option
+                  • Same-day Report Option
                 </li>
             </ul>
           </div>
@@ -623,7 +623,7 @@ export const Home = (): JSX.Element => {
                 alt="Element"
                 src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-2.png"
               />
-              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm" >Judeva Building Inspections (JBI) is a Sydney-based inspection service specialising in pre-purchase building inspections, moisture & water ingress diagnostics, thermal imaging and detailed</p>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm" >Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.</p>
             </div>
 
             {/* Contact Column */}

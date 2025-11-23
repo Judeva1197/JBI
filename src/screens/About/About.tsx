@@ -163,15 +163,23 @@ export const About = (): JSX.Element => {
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                Hi, I'm Eddy, a Licensed Builder, Senior Building & Facilities Manager and Inspection Specialist with over a decade of experience across residential construction, facilities management and remedial projects.
+                Hi, I’m Eddy, a Licensed Builder with years of practical experience in residential construction, quality checks and identifying building issues before they become major problems. This mix of real-world building knowledge and inspection skills gives you a level of detail and accuracy many inspectors don’t offer.
+
+
               </p>
               <p
                 className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-6"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                I currently oversee large-scale building operations while running Judeva Building Inspections, combining practical site knowledge with professional reporting skills.
+                My reports are written in simple, easy-to-understand language so you know exactly what’s going on with your property and what steps to take next. Buyers, owners and investors rely on my inspections for peace of mind, clarity and strong decision-making.
+
+
               </p>
+
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-6"
+                data-aos="fade-up"
+                data-aos-duration="1000">At Judeva Building Inspections, I focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence</p>
               <p
                 className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg sm:text-xl mb-4"
                 data-aos="fade-up"
@@ -447,7 +455,7 @@ export const About = (): JSX.Element => {
                 src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-2.png"
               />
               <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                Judeva Building Inspections (JBI) is a Sydney-based inspection service specialising in pre-purchase building inspections, moisture & water ingress diagnostics, thermal imaging and detailed
+                Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.
               </p>
             </div>
 
