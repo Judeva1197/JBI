@@ -16,7 +16,7 @@ interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({
   
   logoSrc = "/2381e0f2-52ae-4253-81da-16c35dfc62c3-1.png",
-  textColor = "text-black",
+  textColor = "text-red",
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
     
@@ -36,7 +36,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   return (
     <>
       {/* Desktop Navigation - Original Layout */}
-    <div className="hidden lg:flex flex-wrap items-center justify-between px-60 py-1">
+    <div className="hidden lg:flex flex-wrap items-center justify-between px-40 py-1">
         {/* Logo */}
         <img
           className="w-32 h-auto object-contain"
@@ -50,7 +50,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             <Link
               key={index}
               to={item.href}
-              className={`[font-family:'Inter',Helvetica] font-medium ${textColor} text-sm tracking-[0] leading-[normal] hover:text-[#154060] hover:tracking-wide transition-opacity ease-in-out duration-[360ms]`}
+              className={`[font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[normal] hover:text-[#154060] hover:tracking-wide transition-opacity ease-in-out duration-[360ms]`}
             >
               {item.label}
             </Link>

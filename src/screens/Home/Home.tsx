@@ -91,15 +91,15 @@ export const Home = (): JSX.Element => {
   return (
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       <section
-        className="relative w-full min-h-[100vh] text-white bg-cover lg:bg-contain bg-center"
-        style={{ backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/untitled-design--19--1.png'}')` }}
+        className="relative w-full min-h-[10vh] xl:min-h-[100vh] text-white bg-cover lg:bg-cover bg-center"
+        style={{ backgroundRepeat:"no-repeat",backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/untitled-design--19--1.png'}')` }}
       >
         <div className="relative z-10 max-w-full mx-auto py-12 flex flex-col gap-10">
           <Navigation textColor="text-black" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16  px-2">
             <h1 
-              className="[font-family:'Inter',Helvetica] font-bold text-white text-4xl sm:text-5xl lg:text-[64px] leading-tight max-w-3xl"
+              className="[font-family:'Inter',Helvetica] font-bold text-white text-4xl sm:text-5xl lg:text-[84px] leading-tight max-w-5xl"
               data-aos="fade-down"
               data-aos-easing="linear"
               data-aos-duration="500"
@@ -254,7 +254,7 @@ export const Home = (): JSX.Element => {
       </section>
 
       <section
-        className="relative w-full  py-16 text-white bg-cover lg:bg-center min-h-[100vh] lg:min-h-[10vh]"
+        className="relative w-full  py-16 text-white bg-cover lg:bg-center min-h-[10vh] lg:min-h-[10vh]"
         style={{ backgroundImage: "url('/untitled-design--22--1.png')" ,backgroundRepeat:"no-repeat",backgroundAttachment:"fixed"}}
       >
         <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col gap-12">
