@@ -64,6 +64,9 @@ const tools = [
   "Endoscopic cavity cameras",
   "Laser measurers",
   "Digital reporting & CRM tools",
+  "High-Resolution Photography & Reporting Software",
+  "Surface Checking Tools",
+  "Dye Testing Kit",
 ];
 
 export const About = (): JSX.Element => {

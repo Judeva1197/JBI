@@ -134,7 +134,7 @@ export const Home = (): JSX.Element => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="0" className="border-0 shadow-none">
               <CardContent className="p-0">
               <GlareHover
@@ -218,6 +218,35 @@ export const Home = (): JSX.Element => {
                 </h3>
                 <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
                  A dilapidation report documents the current condition of a property and its surrounding structures before construction or excavation work begins.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="3000" className="border-0 shadow-none">
+              <CardContent className="p-0">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                className=""
+              >
+                <img
+                  className="w-full h-full object-cover mb-5"
+                  alt="Water Ingress & Leak Detection Inspection"
+                  src="/LeakDetection.png"
+                />
+              </GlareHover>
+                <h3 
+                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
+                  
+                >
+                  Water Ingress & Leak Detection Inspection
+                </h3>
+                <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
+                  Our Water Ingress Inspection identifies the exact source of leaks and moisture issues using a combination of thermal imaging, moisture detection and optional dye-testing.
                 </p>
               </CardContent>
             </Card>
@@ -490,9 +519,14 @@ export const Home = (): JSX.Element => {
                       UNITS/APARTMENTS (GENERIC)
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $450
-                    </p>
+                    <div className="flex items-baseline gap-1">
+                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                        $450
+                      </p>
+                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                        + GST
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -502,9 +536,14 @@ export const Home = (): JSX.Element => {
                       Townhouses
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $500
-                    </p>
+                    <div className="flex items-baseline gap-1">
+                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                        $500
+                      </p>
+                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                        + GST
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -514,9 +553,14 @@ export const Home = (): JSX.Element => {
                       Houses (small)
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $550
-                    </p>
+                    <div className="flex items-baseline gap-1">
+                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                        $550
+                      </p>
+                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                        + GST
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -526,9 +570,14 @@ export const Home = (): JSX.Element => {
                       Houses (medium–large)
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $600
-                    </p>
+                    <div className="flex items-baseline gap-1">
+                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                        $600
+                      </p>
+                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                        + GST
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -538,9 +587,31 @@ export const Home = (): JSX.Element => {
                       Dilapidation Reports
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                      $650
-                    </p>
+                    <div className="flex items-baseline gap-1">
+                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                        $650
+                      </p>
+                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                        + GST
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                  <CardContent className="p-14 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                      Thermal Imaging & Moisture Detection
+                    </h3>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                    <div className="flex items-baseline gap-1 mb-6">
+                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                        $120
+                      </p>
+                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                        + GST
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
             </div>
