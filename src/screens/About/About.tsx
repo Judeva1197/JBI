@@ -36,6 +36,11 @@ const services = [
     description:
       "A photographic and written condition report of neighbouring properties before & after construction works. Common for builders, developers & owners needing protection from damage claims.",
   },
+  {
+    title: "Thermal Imaging & Moisture Detection",
+    description:
+      "Enhance your pre-purchase or pre-sale inspection with advanced thermal imaging and moisture testing. This add-on helps identify hidden leaks, dampness, insulation gaps, roof moisture and early-stage water damage that aren’t visible to the eye.",
+  },
 ];
 
 const serviceAreas = [

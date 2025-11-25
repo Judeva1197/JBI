@@ -485,7 +485,7 @@ export const Home = (): JSX.Element => {
               data-aos-duration="1000"
                   className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
                 >
-                  • Photographic Evidenc
+                  • Photographic Evidence
                 </li>
                 <li
                 data-aos="fade-left"
@@ -604,13 +604,31 @@ export const Home = (): JSX.Element => {
                       Thermal Imaging & Moisture Detection
                     </h3>
                     <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <div className="flex items-baseline gap-1 mb-6">
+                    <div className="flex items-baseline gap-1 mb-4">
                       <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                        $120
+                        $700
                       </p>
                       <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
                         + GST
                       </p>
+                    </div>
+
+                    <div className="mb-4 text-left">
+                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
+                      <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
+                        <li>Thermal imaging</li>
+                        <li>Moisture detection</li>
+                        <li>Moisture mapping</li>
+                        <li>Full written report with photos</li>
+                      </ul>
+                    </div>
+
+                    <div className="mt-2 border-t border-white/20 pt-4 text-left">
+                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white">Dye Testing Add-On:</p>
+                      <p className="[font-family:'Poppins',Helvetica] font-light text-sm text-white">+ $150 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></p>
+
+                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mt-3">Urgent Same-Day Visit:</p>
+                      <p className="[font-family:'Poppins',Helvetica] font-light text-sm text-white">+ $150 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></p>
                     </div>
                   </CardContent>
                 </Card>
@@ -668,7 +686,7 @@ export const Home = (): JSX.Element => {
               data-aos-easing="linear"
               data-aos-duration="500"
             >
-              Reliable Property Assessments Expertise You Can Count On
+              Reliable Property Assessments & Expertise You Can Count On
             </h2>
 
             <Button data-aos="fade-up" data-aos-duration="500" onClick={scrollToInspectionForm} className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30">
