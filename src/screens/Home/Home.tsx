@@ -92,7 +92,7 @@ export const Home = (): JSX.Element => {
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       <section
         className="relative w-full min-h-[10vh] xl:min-h-[100vh] text-white bg-cover lg:bg-cover bg-center"
-        style={{ backgroundRepeat:"no-repeat",backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/untitled-design--19--1.png'}')` }}
+        style={{ backgroundRepeat:"no-repeat",backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/funtitled-design--19--1.png'}')` }}
       >
         <div className="relative z-10 max-w-full mx-auto py-12 flex flex-col gap-10">
           <Navigation textColor="text-black" />

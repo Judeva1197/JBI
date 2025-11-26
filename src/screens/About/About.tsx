@@ -72,6 +72,7 @@ const tools = [
   "High-Resolution Photography & Reporting Software",
   "Surface Checking Tools",
   "Dye Testing Kit",
+  "Moisture Detection Scanner"
 ];
 
 export const About = (): JSX.Element => {
