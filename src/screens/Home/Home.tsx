@@ -581,22 +581,7 @@ export const Home = (): JSX.Element => {
                   </CardContent>
                 </Card>
 
-                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
-                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      Dilapidation Reports
-                    </h3>
-                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <div className="flex items-baseline gap-1">
-                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                        $650
-                      </p>
-                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
-                        + GST
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+                
 
                 <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
                   <CardContent className="p-14 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
@@ -624,11 +609,18 @@ export const Home = (): JSX.Element => {
                     </div>
 
                     <div className="mt-2 border-t border-white/20 pt-4 text-left">
-                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white">Dye Testing Add-On:</p>
-                      <p className="[font-family:'Poppins',Helvetica] font-light text-sm text-white">+ $150 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></p>
+                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-3">Premium Add-Ons (Choose One):</p>
+                      <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1 mb-4">
+                        <li>Thermal Scan & Moisture Detection – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                        <li>Urgent Same-Day Visit & Report – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                        <li>Urgent Same-Day Report – $50 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                        <li>Roof Void Scan – $80 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                      </ul>
 
-                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mt-3">Urgent Same-Day Visit:</p>
-                      <p className="[font-family:'Poppins',Helvetica] font-light text-sm text-white">+ $150 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></p>
+                      <div className="border-t border-white/20 pt-3 mt-3">
+                        <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-1">Premium Bundle</p>
+                        <p className="[font-family:'Poppins',Helvetica] font-light text-xs text-white">Get all add-ons combined for the most detailed and efficient inspection.</p>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
