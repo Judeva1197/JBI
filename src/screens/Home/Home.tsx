@@ -664,6 +664,146 @@ export const Home = (): JSX.Element => {
         </div>
       </section>
 
+      {/* Water Ingress & Dilapidation Sections (new) */}
+      <section className="relative py-6 lg:py-10 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+          <div className="flex-1">
+            <h2
+              className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-8"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
+              WATER INGRESS & LEAK DETECTION
+            </h2>
+
+            <div className="grid gap-8 max-w-xl">
+              <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                    Water Ingress & Leak Detection Inspection
+                  </h3>
+                  <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $700
+                    </p>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                      + GST
+                    </p>
+                  </div>
+
+                  <div className="mb-4 text-left">
+                    <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
+                      <li>Thermal imaging</li>
+                      <li>Moisture detection</li>
+                      <li>Moisture mapping</li>
+                      <li>Full written report with photos</li>
+                    </ul>
+                  </div>
+
+                  <div className="mt-2 border-t border-white/20 pt-4 text-left">
+                    <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white">Add-ons:</p>
+                    <p className="[font-family:'Poppins',Helvetica] font-light text-sm text-white">Dye Testing: + $150 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></p>
+                    <p className="[font-family:'Poppins',Helvetica] font-light text-sm text-white mt-2">Urgent same-day visit: + $150 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+          </div>
+
+          <div className="flex-1 lg:flex-1 lg:sticky lg:top-24">
+            <GlareHover
+              glareColor="#ffffff"
+              glareOpacity={0.3}
+              glareAngle={-30}
+              glareSize={300}
+              transitionDuration={800}
+              playOnce={false}
+              className=""
+            >
+              <img
+                className="w-full max-w-xl rounded-[32px] object-cover shadow-xl"
+                alt="Water Ingress & Leak Detection"
+                src="WaterIngress.png"
+                data-aos="fade-left"
+                data-aos-duration="700"
+              />
+            </GlareHover>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-6 lg:py-20 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+          <div className="flex-1 lg:flex-1 lg:order-2 lg:self-start">
+            <GlareHover
+              glareColor="#ffffff"
+              glareOpacity={0.3}
+              glareAngle={-30}
+              glareSize={300}
+              transitionDuration={800}
+              playOnce={false}
+              className=""
+            >
+              <img
+                className="w-full max-w-xl rounded-[32px] object-cover shadow-xl"
+                alt="Dilapidation Reports"
+                src="/DilapidationReports.png"
+                data-aos="fade-right"
+                data-aos-duration="700"
+              />
+            </GlareHover>
+          </div>
+
+          <div className="flex-1 lg:order-1">
+            <h2
+              className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-8"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
+              DILAPIDATION REPORTS
+            </h2>
+
+            <div className="grid gap-8 max-w-xl">
+              <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                    Dilapidation Reporting
+                  </h3>
+                  <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $650
+                    </p>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                      + GST
+                    </p>
+                  </div>
+
+                  <div className="mb-4 text-left">
+                    <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
+                      <li>Photographic and written condition reporting</li>
+                      <li>Pre- and post-construction comparisons</li>
+                      <li>Detailed site notes</li>
+                    </ul>
+                  </div>
+
+                  <div className="mt-2 border-t border-white/20 pt-4 text-left">
+                    <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white">Add-on:</p>
+                    <p className="[font-family:'Poppins',Helvetica] font-light text-sm text-white">Re-attendance fee post build: + $250 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Inspection form (inserted before CTA) */}
       <section className="relative py-32 px-4">
         <div className="max-w-6xl mx-auto">
