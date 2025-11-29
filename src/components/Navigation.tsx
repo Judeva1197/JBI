@@ -29,7 +29,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   };
 
   const redirectToInspectionForm = () => {
-    window.location.href = '/contact#inspection-form';
+    window.location.href = 'https://formitize.co/Qk6V6-GB';
   }
 
    
