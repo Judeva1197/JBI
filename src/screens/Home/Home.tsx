@@ -126,7 +126,7 @@ export const Home = (): JSX.Element => {
             data-aos-easing="linear"
             data-aos-duration="500"
           >
-          SERVICES WE OFFERED
+          SERVICES WE OFFER
           </h2>
 
           <p data-aos="fade-up" data-aos-duration="1000" className="text-center [font-family:'Poppins',Helvetica] font-light text-base sm:text-sm text-[#154060] tracking-[0] leading-[normal] mb-12">
