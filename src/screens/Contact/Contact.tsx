@@ -9,6 +9,7 @@ import { Navigation } from "../../components/Navigation";
 const navigationItems = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
+  { label: "BUILDING & FM", href: "/building-management" },
   { label: "CONTACT US", href: "/contact" },
 ];
 
@@ -29,12 +30,12 @@ export const Contact = (): JSX.Element => {
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80')" }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
-        
-        <div className="relative z-10 max-w-full mx-auto px-2 lg:px-20 py-12 flex flex-col gap-10">
+
+        <div className="relative z-10 max-w-full mx-auto px-2 lg:px-20 pb-12 flex flex-col gap-10">
           <Navigation textColor="text-white" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16 px-2">
-            <h1 
+            <h1
               className="[font-family:'Inter',Helvetica] font-bold text-white text-4xl sm:text-5xl lg:text-[64px] leading-tight max-w-4xl"
               data-aos="fade-down"
               data-aos-duration="500"
@@ -53,9 +54,9 @@ export const Contact = (): JSX.Element => {
       <section className="relative py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <Card 
-              data-aos="fade-up" 
-              data-aos-duration="500" 
+            <Card
+              data-aos="fade-up"
+              data-aos-duration="500"
               className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <CardContent className="p-8 flex flex-col items-center text-center gap-4">
@@ -71,9 +72,9 @@ export const Contact = (): JSX.Element => {
               </CardContent>
             </Card>
 
-            <Card 
-              data-aos="fade-up" 
-              data-aos-duration="700" 
+            <Card
+              data-aos="fade-up"
+              data-aos-duration="700"
               className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <CardContent className="p-8 flex flex-col items-center text-center gap-4">
@@ -89,9 +90,9 @@ export const Contact = (): JSX.Element => {
               </CardContent>
             </Card>
 
-            <Card 
-              data-aos="fade-up" 
-              data-aos-duration="900" 
+            <Card
+              data-aos="fade-up"
+              data-aos-duration="900"
               className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <CardContent className="p-8 flex flex-col items-center text-center gap-4">
@@ -107,9 +108,9 @@ export const Contact = (): JSX.Element => {
               </CardContent>
             </Card>
 
-            <Card 
-              data-aos="fade-up" 
-              data-aos-duration="1100" 
+            <Card
+              data-aos="fade-up"
+              data-aos-duration="1100"
               className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <CardContent className="p-8 flex flex-col items-center text-center gap-4">
@@ -145,7 +146,7 @@ export const Contact = (): JSX.Element => {
           />
 
           <div className="relative z-10 flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
-            <h2 
+            <h2
               className="[font-family:'Inter',Helvetica] font-medium text-white text-3xl sm:text-5xl uppercase max-w-4xl"
               data-aos="fade-down"
               data-aos-duration="500"
@@ -153,7 +154,7 @@ export const Contact = (): JSX.Element => {
               Ready to Book Your Inspection?
             </h2>
 
-            <p 
+            <p
               className="[font-family:'Poppins',Helvetica] font-light text-white text-lg max-w-2xl"
               data-aos="fade-up"
               data-aos-duration="700"
@@ -161,9 +162,9 @@ export const Contact = (): JSX.Element => {
               Get professional building inspection services with same-day reports available
             </p>
 
-            <Button 
-              data-aos="fade-up" 
-              data-aos-duration="900" 
+            <Button
+              data-aos="fade-up"
+              data-aos-duration="900"
               onClick={scrollToInspectionForm}
               className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30"
             >

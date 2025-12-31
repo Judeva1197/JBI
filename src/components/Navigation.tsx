@@ -1,10 +1,11 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const navigationItems = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
+  { label: "BUILDING & FM", href: "/building-management" },
   { label: "CONTACT US", href: "/contact" },
 ];
 
@@ -14,12 +15,12 @@ interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
-  
-  logoSrc = "/2381e0f2-52ae-4253-81da-16c35dfc62c3-1.png",
+
+  logoSrc = "/logo.png",
   textColor = "text-red",
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -32,11 +33,11 @@ export const Navigation: React.FC<NavigationProps> = ({
     window.location.href = 'https://formitize.co/Qk6V6-GB';
   }
 
-   
+
   return (
     <>
-      {/* Desktop Navigation - Original Layout */}
-    <div className="hidden lg:flex flex-wrap items-center justify-between px-40 py-1">
+      {/* Desktop Navigation - Solid Blue Fixed */}
+      <div className="hidden lg:flex flex-wrap items-center justify-between px-10 xl:px-40 h-[100px] bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50">
         {/* Logo */}
         <img
           className="w-32 h-auto object-contain"
@@ -45,12 +46,12 @@ export const Navigation: React.FC<NavigationProps> = ({
         />
 
         {/* Desktop Navigation Menu */}
-        <nav className="flex flex-wrap items-center justify-center gap-6 pb-6">
+        <nav className="flex flex-wrap items-center justify-center gap-6">
           {navigationItems.map((item, index) => (
             <Link
               key={index}
               to={item.href}
-              className={`[font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[normal] hover:text-[#154060] hover:tracking-wide transition-opacity ease-in-out duration-[360ms]`}
+              className={`relative [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[normal] hover:tracking-wide transition-all ease-in-out duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full`}
             >
               {item.label}
             </Link>
@@ -58,13 +59,13 @@ export const Navigation: React.FC<NavigationProps> = ({
         </nav>
 
         {/* Desktop Book Now Button */}
-        <Button onClick={redirectToInspectionForm}  className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+        <Button onClick={redirectToInspectionForm} className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30">
           BOOK NOW
         </Button>
-    </div>
+      </div>
 
       {/* Mobile Navigation */}
-      <div className="flex lg:hidden flex-wrap items-center justify-between px-4 sm:px-6 py-1">
+      <div className="flex lg:hidden flex-wrap items-center justify-between px-4 sm:px-6 py-3 bg-[#367c9c] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50 min-h-[70px]">
         {/* Mobile Logo */}
         <img
           className="w-24 sm:w-28 h-auto object-contain"
@@ -80,19 +81,16 @@ export const Navigation: React.FC<NavigationProps> = ({
           aria-expanded={isMenuOpen}
         >
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? "rotate-45 translate-y-2" : ""
-            }`}
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? "opacity-0" : ""
-            }`}
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""
+              }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
+            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
           />
         </button>
       </div>
@@ -107,7 +105,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           />
 
           {/* Off-Canvas Menu */}
-          <div className="fixed right-0 top-0 h-full w-64 bg-[#154060] shadow-lg z-50 lg:hidden transition-transform duration-300 ease-in-out">
+          <div className="fixed right-0 top-0 h-full w-64 bg-[#154060] shadow-lg z-[60] lg:hidden transition-transform duration-300 ease-in-out">
             {/* Close Button */}
             <button
               onClick={closeMenu}
@@ -141,6 +139,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           </div>
         </>
       )}
+      <div className="h-[70px] lg:h-[100px] w-full bg-transparent"></div>
     </>
   );
 };

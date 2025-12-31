@@ -9,6 +9,7 @@ import { Navigation } from "../../components/Navigation";
 const navigationItems = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
+  { label: "BUILDING & FM", href: "/building-management" },
   { label: "CONTACT US", href: "/contact" },
 ];
 
@@ -37,7 +38,7 @@ export const Home = (): JSX.Element => {
       const sectionRect = sectionElement.getBoundingClientRect();
       const stickyTop = 96; // 24 * 4 = 96px (top-24 equivalent)
       const imageHeight = imageContainerRect.height;
-      
+
       // Calculate when image should stop being sticky
       // When section bottom reaches the point where image would naturally end
       // This happens when: sectionBottom <= imageHeight + stickyTop
@@ -49,7 +50,7 @@ export const Home = (): JSX.Element => {
         // Start being sticky when content top reaches stickyTop
         // Stop being sticky when section bottom reaches or passes stopStickyPoint
         const shouldBeSticky = contentRect.top <= stickyTop && sectionBottom > stopStickyPoint;
-        
+
         if (shouldBeSticky) {
           // Sticky position - image stays fixed while content scrolls
           setImageStyle({
@@ -92,13 +93,13 @@ export const Home = (): JSX.Element => {
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       <section
         className="relative w-full min-h-[10vh] xl:min-h-[100vh] text-white bg-cover lg:bg-cover bg-center"
-        style={{ backgroundRepeat:"no-repeat",backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/funtitled-design--19--1.png'}')` }}
+        style={{ backgroundRepeat: "no-repeat", backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/funtitled-design--19--1.png'}')` }}
       >
-        <div className="relative z-10 max-w-full mx-auto py-12 flex flex-col gap-10">
+        <div className="relative z-10 max-w-full mx-auto pb-12 flex flex-col gap-10">
           <Navigation textColor="text-black" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16  px-2">
-            <h1 
+            <h1
               className="[font-family:'Inter',Helvetica] font-bold text-white text-4xl sm:text-5xl lg:text-[84px] leading-tight max-w-5xl"
               data-aos="fade-down"
               data-aos-easing="linear"
@@ -120,13 +121,13 @@ export const Home = (): JSX.Element => {
 
       <section className="relative py-6 lg:py-32 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 
+          <h2
             className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-4"
             data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="500"
           >
-          SERVICES WE OFFER
+            SERVICES WE OFFER
           </h2>
 
           <p data-aos="fade-up" data-aos-duration="1000" className="text-center [font-family:'Poppins',Helvetica] font-light text-base sm:text-sm text-[#154060] tracking-[0] leading-[normal] mb-12">
@@ -135,8 +136,8 @@ export const Home = (): JSX.Element => {
         </div>
 
         <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="0" className="border-0 shadow-none">
-              <CardContent className="p-0">
+          <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="0" className="border-0 shadow-none">
+            <CardContent className="p-0">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -152,20 +153,20 @@ export const Home = (): JSX.Element => {
                   src="/untitled--300-x-400-px-.png"
                 />
               </GlareHover>
-                <h3 
-                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
-                  
-                >
-                  Pre-purchase Building Inspections
-                </h3>
-                <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                  A pre-purchase building inspection provides a detailed assessment of the property’s structural integrity and overall safety before you buy.
-                </p>
-              </CardContent>
-            </Card>
+              <h3
+                className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
 
-            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" className="border-0 shadow-none">
-              <CardContent className="p-0">
+              >
+                Pre-purchase Building Inspections
+              </h3>
+              <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
+                A pre-purchase building inspection provides a detailed assessment of the property’s structural integrity and overall safety before you buy.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" className="border-0 shadow-none">
+            <CardContent className="p-0">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -181,20 +182,20 @@ export const Home = (): JSX.Element => {
                   src="/untitled--300-x-400-px---1-.png"
                 />
               </GlareHover>
-                <h3 
-                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
-                  
-                >
-                  Pre-sale Vendor Inspections
-                </h3>
-                <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                  A pre-sale vendor inspection thoroughly assesses the structural integrity, safety, and functionality of your property before it goes to market.
-                </p>
-              </CardContent>
-            </Card>
+              <h3
+                className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
 
-            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000" className="border-0 shadow-none">
-              <CardContent className="p-0">
+              >
+                Pre-sale Vendor Inspections
+              </h3>
+              <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
+                A pre-sale vendor inspection thoroughly assesses the structural integrity, safety, and functionality of your property before it goes to market.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000" className="border-0 shadow-none">
+            <CardContent className="p-0">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -210,20 +211,20 @@ export const Home = (): JSX.Element => {
                   src="/untitled--300-x-400-px---2-.png"
                 />
               </GlareHover>
-                <h3 
-                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
-                  
-                >
-                  Dilapidation Reports
-                </h3>
-                <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                 A dilapidation report documents the current condition of a property and its surrounding structures before construction or excavation work begins.
-                </p>
-              </CardContent>
-            </Card>
+              <h3
+                className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
 
-            <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="3000" className="border-0 shadow-none">
-              <CardContent className="p-0">
+              >
+                Dilapidation Reports
+              </h3>
+              <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
+                A dilapidation report documents the current condition of a property and its surrounding structures before construction or excavation work begins.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card data-aos="fade-up" data-aos-easing="linear" data-aos-duration="3000" className="border-0 shadow-none">
+            <CardContent className="p-0">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -239,27 +240,27 @@ export const Home = (): JSX.Element => {
                   src="/LeakDetection.png"
                 />
               </GlareHover>
-                <h3 
-                  className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
-                  
-                >
-                  Water Ingress & Leak Detection Inspection
-                </h3>
-                <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
-                  Our Water Ingress Inspection identifies the exact source of leaks and moisture issues using a combination of thermal imaging, moisture detection and optional dye-testing.
-                </p>
-              </CardContent>
-            </Card>
+              <h3
+                className="[font-family:'Inter',Helvetica] font-medium text-[#154060] text-xl text-center tracking-[0] leading-[normal] mb-4"
+
+              >
+                Water Ingress & Leak Detection Inspection
+              </h3>
+              <p className="[font-family:'Inter',Helvetica] font-light text-black text-sm text-center tracking-[0] leading-[normal]">
+                Our Water Ingress Inspection identifies the exact source of leaks and moisture issues using a combination of thermal imaging, moisture detection and optional dye-testing.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       <section
         className="relative w-full  py-16 text-white bg-cover lg:bg-center min-h-[10vh] lg:min-h-[10vh]"
-        style={{ backgroundImage: "url('/untitled-design--22--1.png')" ,backgroundRepeat:"no-repeat",backgroundAttachment:"fixed"}}
+        style={{ backgroundImage: "url('/untitled-design--22--1.png')", backgroundRepeat: "no-repeat", backgroundAttachment: "fixed" }}
       >
         <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col gap-12">
           <div className="max-w-full flex justify-center items-center flex-col">
-            <h2 
+            <h2
               className="[font-family:'Inter',Helvetica] font-semibold text-3xl sm:text-5xl text-center leading-tight mb-6"
               data-aos="fade-down"
               data-aos-easing="linear"
@@ -274,7 +275,7 @@ export const Home = (): JSX.Element => {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-6">
-              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -290,12 +291,12 @@ export const Home = (): JSX.Element => {
                   src="/booking.png"
                 />
               </GlareHover>
-                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
-                  Easy Booking
-                </p>
-              </div>
+              <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+                Easy Booking
+              </p>
+            </div>
 
-              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -311,13 +312,13 @@ export const Home = (): JSX.Element => {
                   src="/license.png"
                 />
               </GlareHover>
-                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
-                  
-                  Licensed Builder
-                </p>
-              </div>
+              <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
 
-              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+                Licensed Builder
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -333,13 +334,13 @@ export const Home = (): JSX.Element => {
                   src="/report.png"
                 />
               </GlareHover>
-                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+              <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
 
-                  Detailed Reporting
-                </p>
-              </div>
+                Detailed Reporting
+              </p>
+            </div>
 
-              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -355,13 +356,13 @@ export const Home = (): JSX.Element => {
                   src="/back-in-time.png"
                 />
               </GlareHover>
-                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
-                 
-                  Fast Turnaround
-                </p>
-              </div>
+              <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
 
-              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+                Fast Turnaround
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -377,13 +378,13 @@ export const Home = (): JSX.Element => {
                   src="/trust.png"
                 />
               </GlareHover>
-                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
-                
-                  Trusted & Professional
-                </p>
-              </div>
+              <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
 
-              <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+                Trusted & Professional
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -399,11 +400,11 @@ export const Home = (): JSX.Element => {
                   src="/thermal-imager.png"
                 />
               </GlareHover>
-                <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
-                 
-                  Thermal Imaging
-                </p>
-              </div>
+              <p className="capitalize [font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0] leading-[normal]">
+
+                Thermal Imaging
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -411,25 +412,25 @@ export const Home = (): JSX.Element => {
       <section className="relative py-32 px-4">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
 
-        <GlareHover
-                glareColor="#ffffff"
-                glareOpacity={0.3}
-                glareAngle={-30}
-                glareSize={300}
-                transitionDuration={800}
-                playOnce={false}
-                className=""
-        >
-          <img
-            className="w-full max-w-xl rounded-[32px] object-cover"
-            alt="Untitled design"
-            src="/untitled-design--24--1.png"
-          />
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            className=""
+          >
+            <img
+              className="w-full max-w-xl rounded-[32px] object-cover"
+              alt="Untitled design"
+              src="/untitled-design--24--1.png"
+            />
 
-        </GlareHover>
+          </GlareHover>
 
           <div className="flex-1">
-            <h2 
+            <h2
               className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-8"
               data-aos="fade-down"
               data-aos-easing="linear"
@@ -439,62 +440,62 @@ export const Home = (): JSX.Element => {
             </h2>
 
             <ul className="space-y-2">
-                <li
+              <li
                 data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="500"
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
-                >
-                  • Full Internal & External Inspection
-                </li>
-                <li
+                data-aos-easing="linear"
+                data-aos-duration="500"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+              >
+                • Full Internal & External Inspection
+              </li>
+              <li
                 data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="600"
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
-                >
-                  • Roof Space (where Accessible)
-                </li>
-                <li
+                data-aos-easing="linear"
+                data-aos-duration="600"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+              >
+                • Roof Space (where Accessible)
+              </li>
+              <li
                 data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="700"
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
-                >
-                  • Moisture Testing
-                </li>
-                <li
+                data-aos-easing="linear"
+                data-aos-duration="700"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+              >
+                • Moisture Testing
+              </li>
+              <li
                 data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="800"
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
-                >
-                  • Structural Observations
-                </li>
-                <li
+                data-aos-easing="linear"
+                data-aos-duration="800"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+              >
+                • Structural Observations
+              </li>
+              <li
                 data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="900"
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
-                >
-                  • Safety Hazards & Major Defects
-                </li>
-                <li
+                data-aos-easing="linear"
+                data-aos-duration="900"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+              >
+                • Safety Hazards & Major Defects
+              </li>
+              <li
                 data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="1000"
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
-                >
-                  • Photographic Evidence
-                </li>
-                <li
+                data-aos-easing="linear"
+                data-aos-duration="1000"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+              >
+                • Photographic Evidence
+              </li>
+              <li
                 data-aos="fade-left"
-              data-aos-easing="linear"
-              data-aos-duration="1100"
-                  className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
-                >
-                  • Same-day Report Option
-                </li>
+                data-aos-easing="linear"
+                data-aos-duration="1100"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+              >
+                • Same-day Report Option
+              </li>
             </ul>
           </div>
         </div>
@@ -503,7 +504,7 @@ export const Home = (): JSX.Element => {
       <section className="relative py-6 lg:py-20 px-4">
         <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row gap-10 lg:gap-16 items-start">
           <div ref={contentRef} className="flex-1 text-center lg:text-right">
-            <h2 
+            <h2
               className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
               data-aos="fade-down"
               data-aos-easing="linear"
@@ -513,117 +514,117 @@ export const Home = (): JSX.Element => {
             </h2>
 
             <div className="grid gap-8">
-                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
-                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      UNITS/APARTMENTS (GENERIC)
-                    </h3>
-                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <div className="flex items-baseline gap-1">
-                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                        $450
-                      </p>
-                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
-                        + GST
-                      </p>
+              <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                    UNITS/APARTMENTS (GENERIC)
+                  </h3>
+                  <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                  <div className="flex items-baseline gap-1">
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $450
+                    </p>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                      + GST
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                    Townhouses
+                  </h3>
+                  <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                  <div className="flex items-baseline gap-1">
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $500
+                    </p>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                      + GST
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                    Houses (small)
+                  </h3>
+                  <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                  <div className="flex items-baseline gap-1">
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $550
+                    </p>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                      + GST
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                    Houses (medium–large)
+                  </h3>
+                  <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                  <div className="flex items-baseline gap-1">
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $600
+                    </p>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                      + GST
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+
+
+              <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
+                <CardContent className="p-14 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
+                  <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
+                    Thermal Imaging & Moisture Detection
+                  </h3>
+                  <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
+                      $700
+                    </p>
+                    <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
+                      + GST
+                    </p>
+                  </div>
+
+                  <div className="mb-4 text-left">
+                    <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
+                      <li>Thermal imaging</li>
+                      <li>Moisture detection</li>
+                      <li>Moisture mapping</li>
+                      <li>Full written report with photos</li>
+                    </ul>
+                  </div>
+
+                  <div className="mt-2 border-t border-white/20 pt-4 text-left">
+                    <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-3">Premium Add-Ons (Choose One):</p>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1 mb-4">
+                      <li>Thermal Scan & Moisture Detection – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                      <li>Urgent Same-Day Visit & Report – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                      <li>Urgent Same-Day Report – $50 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                      <li>Roof Void Scan – $80 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                    </ul>
+
+                    <div className="border-t border-white/20 pt-3 mt-3">
+                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-1">Premium Bundle</p>
+                      <p className="[font-family:'Poppins',Helvetica] font-light text-xs text-white">Get all add-ons combined for the most detailed and efficient inspection.</p>
                     </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
-                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      Townhouses
-                    </h3>
-                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <div className="flex items-baseline gap-1">
-                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                        $500
-                      </p>
-                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
-                        + GST
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
-                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      Houses (small)
-                    </h3>
-                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <div className="flex items-baseline gap-1">
-                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                        $550
-                      </p>
-                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
-                        + GST
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-12 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
-                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      Houses (medium–large)
-                    </h3>
-                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <div className="flex items-baseline gap-1">
-                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                        $600
-                      </p>
-                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
-                        + GST
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                
-
-                <Card className="relative border-0 shadow-none overflow-hidden bg-transparent group cursor-pointer">
-                  <CardContent className="p-14 lg:p-6 sm:p-10 bg-[url('/untitled-design--26--2-4.png')] bg-cover bg-center rounded-3xl text-white text-left sm:text-right">
-                    <h3 className="[font-family:'Poppins',Helvetica] font-normal text-2xl sm:text-[32px] leading-tight mb-4 ">
-                      Thermal Imaging & Moisture Detection
-                    </h3>
-                    <p className="[font-family:'Poppins',Helvetica] font-normal text-base ">FROM</p>
-                    <div className="flex items-baseline gap-1 mb-4">
-                      <p className="[font-family:'Poppins',Helvetica] font-bold text-3xl sm:text-[40px] transition-colors duration-[360ms] ease-in-out group-hover:text-cyan-500">
-                        $700
-                      </p>
-                      <p className="[font-family:'Poppins',Helvetica] font-normal text-xs" style={{ fontSize: '9px' }}>
-                        + GST
-                      </p>
-                    </div>
-
-                    <div className="mb-4 text-left">
-                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
-                      <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
-                        <li>Thermal imaging</li>
-                        <li>Moisture detection</li>
-                        <li>Moisture mapping</li>
-                        <li>Full written report with photos</li>
-                      </ul>
-                    </div>
-
-                    <div className="mt-2 border-t border-white/20 pt-4 text-left">
-                      <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-3">Premium Add-Ons (Choose One):</p>
-                      <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1 mb-4">
-                        <li>Thermal Scan & Moisture Detection – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
-                        <li>Urgent Same-Day Visit & Report – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
-                        <li>Urgent Same-Day Report – $50 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
-                        <li>Roof Void Scan – $80 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
-                      </ul>
-
-                      <div className="border-t border-white/20 pt-3 mt-3">
-                        <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-1">Premium Bundle</p>
-                        <p className="[font-family:'Poppins',Helvetica] font-light text-xs text-white">Get all add-ons combined for the most detailed and efficient inspection.</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             <p className="[font-family:'Poppins',Helvetica] font-normal text-black text-sm sm:text-base tracking-[0] leading-[normal] mt-10">
@@ -635,7 +636,7 @@ export const Home = (): JSX.Element => {
           <div className="w-full lg:w-auto lg:flex-1 lg:self-start relative">
             <div ref={imageContainerRef} style={imageStyle}>
 
-            <GlareHover
+              <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
                 glareAngle={-30}
@@ -643,14 +644,14 @@ export const Home = (): JSX.Element => {
                 transitionDuration={800}
                 playOnce={false}
                 className=""
-            >
-              <img
-                className="w-full max-w-xl rounded-[32px] object-cover"
-                alt="Untitled design"
-                src="/untitled-design--25--1.png"
-              />
+              >
+                <img
+                  className="w-full max-w-xl rounded-[32px] object-cover"
+                  alt="Untitled design"
+                  src="/untitled-design--25--1.png"
+                />
 
-</GlareHover>
+              </GlareHover>
             </div>
           </div>
         </div>
@@ -812,7 +813,7 @@ export const Home = (): JSX.Element => {
           />
 
           <div className="relative z-10 flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
-            <h2 
+            <h2
               className="[font-family:'Inter',Helvetica] font-medium text-white text-3xl sm:text-5xl uppercase max-w-3xl"
               data-aos="fade-down"
               data-aos-easing="linear"
@@ -834,7 +835,7 @@ export const Home = (): JSX.Element => {
 
       <footer className="w-full bg-[#154060] text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
-          
+
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
 
@@ -849,9 +850,9 @@ export const Home = (): JSX.Element => {
 
             {/* Contact Column */}
             <div className="flex flex-col gap-4">
-              <h3 
+              <h3
                 className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
-                
+
               >
                 CONTACT
               </h3>
@@ -868,9 +869,9 @@ export const Home = (): JSX.Element => {
 
             {/* Navigation Column */}
             <div className="flex flex-col gap-4">
-              <h3 
+              <h3
                 className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
-               
+
               >
                 NAVIGATION
               </h3>

@@ -7,6 +7,7 @@ import { Navigation } from "../../components/Navigation";
 const navigationItems = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
+  { label: "BUILDING & FM", href: "/building-management" },
   { label: "CONTACT US", href: "/contact" },
 ];
 
@@ -83,7 +84,7 @@ export const About = (): JSX.Element => {
         className="relative w-full min-h-[60vh] text-white bg-cover lg:bg-contain bg-center"
         style={{ backgroundImage: "url('/aboutusbg.jpg')" }}
       >
-        <div className="relative z-10 max-w-full mx-auto py-12 flex flex-col gap-10">
+        <div className="relative z-10 max-w-full mx-auto pb-12 flex flex-col gap-10">
           <Navigation textColor="text-white" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16 px-2">
@@ -471,7 +472,7 @@ export const About = (): JSX.Element => {
             <div className="flex flex-col gap-4">
               <h3
                 className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
-               
+
               >
                 CONTACT
               </h3>
@@ -489,7 +490,7 @@ export const About = (): JSX.Element => {
             <div className="flex flex-col gap-4">
               <h3
                 className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
-                
+
               >
                 NAVIGATION
               </h3>
