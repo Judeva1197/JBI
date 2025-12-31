@@ -258,7 +258,7 @@ export const Home = (): JSX.Element => {
         className="relative w-full  py-16 text-white bg-cover lg:bg-center min-h-[10vh] lg:min-h-[10vh]"
         style={{ backgroundImage: "url('/untitled-design--22--1.png')", backgroundRepeat: "no-repeat", backgroundAttachment: "fixed" }}
       >
-        <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col gap-12">
+        <div className="relative max-w-6xl mx-auto px-4 flex flex-col gap-12">
           <div className="max-w-full flex justify-center items-center flex-col">
             <h2
               className="[font-family:'Inter',Helvetica] font-semibold text-3xl sm:text-5xl text-center leading-tight mb-6"
@@ -296,7 +296,7 @@ export const Home = (): JSX.Element => {
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" className="flex flex-col items-center text-center gap-5 ">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -812,7 +812,7 @@ export const Home = (): JSX.Element => {
             src="/abbe-sublett-nxzdmuqhn4o-unsplash-1.png"
           />
 
-          <div className="relative z-10 flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
+          <div className="relative flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
             <h2
               className="[font-family:'Inter',Helvetica] font-medium text-white text-3xl sm:text-5xl uppercase max-w-3xl"
               data-aos="fade-down"
@@ -833,7 +833,7 @@ export const Home = (): JSX.Element => {
         </div>
       </section>
 
-      <footer className="w-full bg-[#154060] text-white">
+      <footer className="w-full bg-[#073154] text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
 
 
@@ -841,9 +841,9 @@ export const Home = (): JSX.Element => {
 
             <div className="flex flex-col mt-[-35px]">
               <img
-                className="w-56 sm:w-72 h-auto object-contain "
+                className="w-56 sm:w-72 h-auto object-contain mb-5"
                 alt="Element"
-                src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-2.png"
+                src="/logo.png"
               />
               <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm" >Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.</p>
             </div>

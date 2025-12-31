@@ -37,7 +37,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   return (
     <>
       {/* Desktop Navigation - Solid Blue Fixed */}
-      <div className="hidden lg:flex flex-wrap items-center justify-between px-10 xl:px-40 h-[100px] bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50">
+      <div className="hidden lg:flex flex-wrap items-center justify-between px-10 xl:px-40 h-[80px] bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50" style={{zIndex:"100000"}}>
         {/* Logo */}
         <img
           className="w-32 h-auto object-contain"
