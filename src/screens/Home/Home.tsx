@@ -5,6 +5,7 @@ import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
 import { Inspection } from "../../components/Inspection";
 import { Navigation } from "../../components/Navigation";
+import { Footer } from "../../components/Footer";
 
 const navigationItems = [
   { label: "HOME", href: "/" },
@@ -444,57 +445,78 @@ export const Home = (): JSX.Element => {
                 data-aos="fade-left"
                 data-aos-easing="linear"
                 data-aos-duration="500"
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal] flex items-start gap-3"
               >
-                • Full Internal & External Inspection
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Full Internal & External Inspection
               </li>
               <li
                 data-aos="fade-left"
                 data-aos-easing="linear"
                 data-aos-duration="600"
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal] flex items-start gap-3"
               >
-                • Roof Space (where Accessible)
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Roof Space (where Accessible)
               </li>
               <li
                 data-aos="fade-left"
                 data-aos-easing="linear"
                 data-aos-duration="700"
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal] flex items-start gap-3"
               >
-                • Moisture Testing
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Moisture Testing
               </li>
               <li
                 data-aos="fade-left"
                 data-aos-easing="linear"
                 data-aos-duration="800"
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal] flex items-start gap-3"
               >
-                • Structural Observations
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Structural Observations
               </li>
               <li
                 data-aos="fade-left"
                 data-aos-easing="linear"
                 data-aos-duration="900"
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal] flex items-start gap-3"
               >
-                • Safety Hazards & Major Defects
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Safety Hazards & Major Defects
               </li>
               <li
                 data-aos="fade-left"
                 data-aos-easing="linear"
                 data-aos-duration="1000"
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal] flex items-start gap-3"
               >
-                • Photographic Evidence
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Photographic Evidence
               </li>
               <li
                 data-aos="fade-left"
                 data-aos-easing="linear"
                 data-aos-duration="1100"
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal]"
+                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl tracking-[0] leading-[normal] flex items-start gap-3"
               >
-                • Same-day Report Option
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Same-day Report Option
               </li>
             </ul>
           </div>
@@ -601,21 +623,45 @@ export const Home = (): JSX.Element => {
 
                   <div className="mb-4 text-left">
                     <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
-                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
-                      <li>Thermal imaging</li>
-                      <li>Moisture detection</li>
-                      <li>Moisture mapping</li>
-                      <li>Full written report with photos</li>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white space-y-2 pl-0">
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Thermal imaging</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Moisture detection</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Moisture mapping</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Full written report with photos</span>
+                      </li>
                     </ul>
                   </div>
 
                   <div className="mt-2 border-t border-white/20 pt-4 text-left">
                     <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-3">Premium Add-Ons (Choose One):</p>
-                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1 mb-4">
-                      <li>Thermal Scan & Moisture Detection – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
-                      <li>Urgent Same-Day Visit & Report – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
-                      <li>Urgent Same-Day Report – $50 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
-                      <li>Roof Void Scan – $80 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></li>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white space-y-2 pl-0 mb-4">
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Thermal Scan & Moisture Detection – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Urgent Same-Day Visit & Report – $120 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Urgent Same-Day Report – $50 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Roof Void Scan – $80 <span className="text-xs" style={{ fontSize: '9px' }}>+ GST</span></span>
+                      </li>
                     </ul>
 
                     <div className="border-t border-white/20 pt-3 mt-3">
@@ -688,11 +734,23 @@ export const Home = (): JSX.Element => {
 
                   <div className="mb-4 text-left">
                     <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
-                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
-                      <li>Thermal imaging</li>
-                      <li>Moisture detection</li>
-                      <li>Moisture mapping</li>
-                      <li>Full written report with photos</li>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white space-y-2 pl-0">
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Thermal imaging</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Moisture detection</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Moisture mapping</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Full written report with photos</span>
+                      </li>
                     </ul>
                   </div>
 
@@ -779,10 +837,19 @@ export const Home = (): JSX.Element => {
 
                   <div className="mb-4 text-left">
                     <p className="[font-family:'Poppins',Helvetica] font-medium text-sm text-white mb-2">Includes:</p>
-                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white list-disc pl-5 space-y-1">
-                      <li>Photographic and written condition reporting</li>
-                      <li>Pre- and post-construction comparisons</li>
-                      <li>Detailed site notes</li>
+                    <ul className="[font-family:'Poppins',Helvetica] font-light text-sm text-white space-y-2 pl-0">
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Photographic and written condition reporting</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Pre- and post-construction comparisons</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Detailed site notes</span>
+                      </li>
                     </ul>
                   </div>
 
@@ -833,74 +900,7 @@ export const Home = (): JSX.Element => {
         </div>
       </section>
 
-      <footer className="w-full bg-[#073154] text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16">
-
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
-
-            <div className="flex flex-col mt-[-35px]">
-              <img
-                className="w-56 sm:w-72 h-auto object-contain mb-5"
-                alt="Element"
-                src="/logo.png"
-              />
-              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm" >Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.</p>
-            </div>
-
-            {/* Contact Column */}
-            <div className="flex flex-col gap-4">
-              <h3
-                className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
-
-              >
-                CONTACT
-              </h3>
-              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                EMAIL: INSPECTIONS@JUDEVA.COM.AU
-              </p>
-              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                PHONE: 0432 800 928
-              </p>
-              <Button className="w-fit mt-2 bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30">
-                ENQUIRE NOW
-              </Button>
-            </div>
-
-            {/* Navigation Column */}
-            <div className="flex flex-col gap-4">
-              <h3
-                className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2"
-
-              >
-                NAVIGATION
-              </h3>
-              <nav className="flex flex-col gap-3">
-                {navigationItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.href}
-                    className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm hover:opacity-80 transition-opacity ease-in-out duration-[360ms]"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-          </div>
-        </div>
-
-        <div className="w-full bg-[#012D48] flex flex-col sm:flex-row items-center justify-between gap-2 px-6 py-4 text-sm sm:text-xs">
-          <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
-            COPYRIGHT @ JUDEVA PTY LTD
-          </p>
-
-          <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
-            DESIGN BY <a href="https://webasi.co/" className="text-cyan-500"> WEBASI </a>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

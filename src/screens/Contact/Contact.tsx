@@ -5,6 +5,7 @@ import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Navigation } from "../../components/Navigation";
+import { Footer } from "../../components/Footer";
 
 const navigationItems = [
   { label: "HOME", href: "/" },
@@ -175,64 +176,7 @@ export const Contact = (): JSX.Element => {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-[#154060] text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
-            <div className="flex flex-col mt-[-35px]">
-              <img
-                className="w-56 sm:w-72 h-auto object-contain"
-                alt="Element"
-                src="/2381e0f2-52ae-4253-81da-16c35dfc62c3-1.png"
-              />
-              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              <h3 className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2">
-                CONTACT
-              </h3>
-              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                EMAIL: INSPECTIONS@JUDEVA.COM.AU
-              </p>
-              <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                PHONE: 0432 800 928
-              </p>
-              <Button className="w-fit mt-2 bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30">
-                ENQUIRE NOW
-              </Button>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              <h3 className="[font-family:'Inter',Helvetica] font-semibold text-xl mb-2">
-                NAVIGATION
-              </h3>
-              <nav className="flex flex-col gap-3">
-                {navigationItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.href}
-                    className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm hover:opacity-80 transition-opacity ease-in-out duration-[360ms]"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full bg-[#012D48] flex flex-col sm:flex-row items-center justify-between gap-2 px-6 py-4 text-sm sm:text-xs">
-          <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
-            COPYRIGHT @ JUDEVA PTY LTD
-          </p>
-
-          <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
-            DESIGN BY <a href="https://webasi.co/" className="text-cyan-500"> WEBASI </a>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
