@@ -63,7 +63,7 @@ export const Footer = (): JSX.Element => {
 
             <div className="w-full bg-[#012D48] flex flex-col sm:flex-row items-center justify-between gap-2 px-6 py-4 text-sm sm:text-xs">
                 <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
-                    COPYRIGHT @ JUDEVA PTY LTD
+                    COPYRIGHT 2026 @ JUDEVA PTY LTD
                 </p>
 
                 <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">

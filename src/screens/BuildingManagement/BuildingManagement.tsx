@@ -194,7 +194,7 @@ export const BuildingManagement = (): JSX.Element => {
                     </p>
                     <div className="relative">
                         {/* Connecting Line (Desktop) */}
-                        <div className="hidden lg:block absolute top-[40px] left-0 w-full h-1 bg-white/20 -z-0"></div>
+                        <div className="hidden lg:block absolute top-[40px] left-0 w-full h-1 bg-white/20 "></div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4 relative z-10">
                             {approachSteps.map((step, index) => (
