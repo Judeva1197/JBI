@@ -5,6 +5,7 @@ import { Home } from "./screens/Home";
 import { About } from "./screens/About";
 import { Contact } from "./screens/Contact";
 import { BuildingManagement } from "./screens/BuildingManagement";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const App = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

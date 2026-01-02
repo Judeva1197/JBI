@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const navigationItems = [
@@ -10,6 +10,9 @@ const navigationItems = [
 ];
 
 export const Footer = (): JSX.Element => {
+    const location = useLocation();
+    const logoSrc = location.pathname === '/building-management' ? '/logo.png' : '/logoMain.png';
+
     return (
         <footer className="w-full bg-[#073154] text-white">
             <div className="max-w-6xl mx-auto px-4 py-16">
@@ -18,7 +21,7 @@ export const Footer = (): JSX.Element => {
                         <img
                             className="w-56 sm:w-72 h-auto object-contain mb-5"
                             alt="Element"
-                            src="/logoMain.png"
+                            src={logoSrc}
                         />
                         <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
                             Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.

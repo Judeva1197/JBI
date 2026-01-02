@@ -146,7 +146,7 @@ export const Contact = (): JSX.Element => {
             src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1600&q=80"
           />
 
-          <div className="relative z-10 flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
+          <div className="relative flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
             <h2
               className="[font-family:'Inter',Helvetica] font-medium text-white text-3xl sm:text-5xl uppercase max-w-4xl"
               data-aos="fade-down"

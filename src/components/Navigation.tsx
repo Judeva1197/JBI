@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 const navigationItems = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about" },
-  { label: "BUILDING & FM", href: "/building-management" },
+  { label: "BUILDING & FACILITIES MANAGEMENT", href: "/building-management" },
   { label: "CONTACT US", href: "/contact" },
 ];
 
