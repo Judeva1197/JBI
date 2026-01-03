@@ -18,11 +18,15 @@ export const Footer = (): JSX.Element => {
             <div className="max-w-6xl mx-auto px-4 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
                     <div className="flex flex-col mt-[-35px]">
-                        <img
-                            className="w-56 sm:w-72 h-auto object-contain mb-5"
-                            alt="Element"
-                            src={logoSrc}
-                        />
+                        {location.pathname === '/contact' ? (
+                            <h2 className="text-3xl sm:text-4xl font-bold [font-family:'Inter',Helvetica] text-white tracking-widest mb-5 mt-8">JUDEVA</h2>
+                        ) : (
+                            <img
+                                className="w-56 sm:w-72 h-auto object-contain mb-5"
+                                alt="Element"
+                                src={logoSrc}
+                            />
+                        )}
                         <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
                             Focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence.
                         </p>
@@ -34,7 +38,7 @@ export const Footer = (): JSX.Element => {
                             CONTACT
                         </h3>
                         <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                            EMAIL: INSPECTIONS@JUDEVA.COM.AU
+                            EMAIL: eddy@judeva.com.au
                         </p>
                         <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
                             PHONE: 0432 800 928

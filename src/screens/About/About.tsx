@@ -54,6 +54,7 @@ const serviceAreas = [
   "Penrith",
   "Liverpool",
   "Northern Districts",
+  "Sydney Wide"
 ];
 
 const eddyCredentials = [
@@ -444,7 +445,7 @@ export const About = (): JSX.Element => {
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              "To deliver clear, honest, and reliable building inspections that protect clients' investments and provide real peace of mind."
+              “At JUDEVA, our mission is to protect and enhance building assets through expert inspections and proactive building & facilities management, delivering high-quality finishes, long-term performance and peace of mind for owners.”
             </p>
             <Button
               data-aos="fade-up"

@@ -85,9 +85,16 @@ export const Contact = (): JSX.Element => {
                 <h3 className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-xl">
                   EMAIL
                 </h3>
-                <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm break-all">
-                  inspections@judeva.com.au
-                </p>
+                <div className="flex flex-col gap-1 w-full items-center">
+                  <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm break-all pt-2">
+                    <span className="font-medium">BM / FM:</span> <br />
+                    eddy@judeva.com.au
+                  </p>
+                  <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm break-all">
+                    <span className="font-medium">Inspections:</span> <br />
+                    inspections@judeva.com.au
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
@@ -131,11 +138,11 @@ export const Contact = (): JSX.Element => {
       </section>
 
       {/* Inspection Form Section */}
-      <section className="relative py-20 px-4" id="inspection-form">
+      {/* <section className="relative py-20 px-4" id="inspection-form">
         <div className="max-w-6xl mx-auto" ref={inspectionFormRef}>
           <Inspection />
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="relative px-2 lg:px-20 my-20">

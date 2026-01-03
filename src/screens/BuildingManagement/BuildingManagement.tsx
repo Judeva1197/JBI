@@ -228,6 +228,35 @@ export const BuildingManagement = (): JSX.Element => {
                 </div>
             </section>
 
+            {/* Mission Section */}
+            <section className="relative px-6 lg:px-20 my-20">
+                <div className="relative w-full bg-[#154060] rounded-[15px] overflow-hidden">
+                    <img
+                        className="absolute inset-0 w-full h-full rounded-[32px] object-cover opacity-20"
+                        alt="Background"
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=400&fit=crop"
+                    />
+
+                    <div className="relative  flex flex-col items-center justify-center text-center gap-6 px-6 py-16 sm:py-20">
+                        <h2
+                            className="[font-family:'Inter',Helvetica] font-medium text-white text-3xl sm:text-5xl max-w-4xl"
+                            data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="500"
+                        >
+                            Our Mission
+                        </h2>
+                        <p
+                            className="[font-family:'Poppins',Helvetica] font-light text-white text-xl sm:text-2xl italic max-w-3xl"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                        >
+                            “Our mission is to manage and inspect buildings with the same care and attention as if they were our own — ensuring quality finishes, compliant systems, and well-maintained assets throughout their lifecycle.”
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Flexible Engagement */}
             <section className="relative py-16 lg:py-32 px-4">
                 <div className="max-w-6xl mx-auto text-center">
