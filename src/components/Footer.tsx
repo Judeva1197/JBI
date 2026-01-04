@@ -9,7 +9,15 @@ const navigationItems = [
     { label: "CONTACT US", href: "/contact" },
 ];
 
-export const Footer = (): JSX.Element => {
+const redirectToInspectionForm = () => {
+    window.location.href = 'https://formitize.co/Qk6V6-GB';
+}
+
+interface FooterProps {
+    logoText?: string;
+}
+
+export const Footer: React.FC<FooterProps> = ({ logoText }): JSX.Element => {
     const location = useLocation();
     const logoSrc = location.pathname === '/building-management' ? '/logo.png' : '/logoMain.png';
 
@@ -18,8 +26,10 @@ export const Footer = (): JSX.Element => {
             <div className="max-w-6xl mx-auto px-4 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
                     <div className="flex flex-col mt-[-35px]">
-                        {location.pathname === '/contact' ? (
-                            <h2 className="text-3xl sm:text-4xl font-bold [font-family:'Inter',Helvetica] text-white tracking-widest mb-5 mt-8">JUDEVA</h2>
+                        {logoText ? (
+                            <h2 className="text-3xl sm:text-4xl font-bold [font-family:'Inter',Helvetica] text-white tracking-widest mb-5 mt-8 whitespace-nowrap">
+                                {logoText}
+                            </h2>
                         ) : (
                             <img
                                 className="w-56 sm:w-72 h-auto object-contain mb-5"
@@ -43,7 +53,7 @@ export const Footer = (): JSX.Element => {
                         <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
                             PHONE: 0432 800 928
                         </p>
-                        <Button className="w-fit mt-2 bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+                        <Button onClick={redirectToInspectionForm} className="w-fit mt-2 bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30">
                             ENQUIRE NOW
                         </Button>
                     </div>
@@ -70,7 +80,7 @@ export const Footer = (): JSX.Element => {
 
             <div className="w-full bg-[#012D48] flex flex-col sm:flex-row items-center justify-between gap-2 px-6 py-4 text-sm sm:text-xs">
                 <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">
-                    COPYRIGHT 2026 @ JUDEVA PTY LTD
+                    COPYRIGHT 2026 @ JUDEVA PVT LTD
                 </p>
 
                 <p className="[font-family:'Inter',Helvetica] font-light text-white tracking-[0] leading-[normal] text-center">

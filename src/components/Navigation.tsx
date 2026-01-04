@@ -11,12 +11,14 @@ const navigationItems = [
 
 interface NavigationProps {
   logoSrc?: string;
+  logoText?: string;
   textColor?: string;
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
 
   logoSrc = "/logoMain.png",
+  logoText,
   textColor = "text-red",
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,11 +41,19 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* Desktop Navigation - Solid Blue Fixed */}
       <div className="hidden lg:flex flex-wrap items-center justify-between px-10 xl:px-40 h-[80px] bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50" style={{ zIndex: "100000" }}>
         {/* Logo */}
-        <img
-          className="w-32 h-auto object-contain"
-          alt="Logo"
-          src={logoSrc}
-        />
+        <Link to="/">
+          {logoText ? (
+            <h1 className="[font-family:'Inter',Helvetica] font-bold text-white text-2xl tracking-tight cursor-pointer whitespace-nowrap">
+              {logoText}
+            </h1>
+          ) : (
+            <img
+              className="w-32 h-auto object-contain cursor-pointer"
+              alt="Logo"
+              src={logoSrc}
+            />
+          )}
+        </Link>
 
         {/* Desktop Navigation Menu */}
         <nav className="flex flex-wrap items-center justify-center gap-6">
@@ -67,11 +77,19 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* Mobile Navigation */}
       <div className="flex lg:hidden flex-wrap items-center justify-between px-4 sm:px-6 py-3 bg-[#367c9c] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50 min-h-[70px]">
         {/* Mobile Logo */}
-        <img
-          className="w-24 sm:w-28 h-auto object-contain"
-          alt="Logo"
-          src={logoSrc}
-        />
+        <Link to="/">
+          {logoText ? (
+            <h1 className="[font-family:'Inter',Helvetica] font-bold text-white text-xl tracking-tight cursor-pointer whitespace-nowrap">
+              {logoText}
+            </h1>
+          ) : (
+            <img
+              className="w-24 sm:w-28 h-auto object-contain cursor-pointer"
+              alt="Logo"
+              src={logoSrc}
+            />
+          )}
+        </Link>
 
         {/* Mobile Hamburger Menu Button */}
         <button

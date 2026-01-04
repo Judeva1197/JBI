@@ -43,6 +43,11 @@ const services = [
     description:
       "Enhance your pre-purchase or pre-sale inspection with advanced thermal imaging and moisture testing. This add-on helps identify hidden leaks, dampness, insulation gaps, roof moisture and early-stage water damage that aren’t visible to the eye.",
   },
+  {
+    title: "BUILDING & FACILITIES MANAGEMENT",
+    description:
+      "Judeva provides builder-led Building & Facilities Management with practical oversight, clear communication, and cost-effective outcomes. Every building is overseen by a licensed NSW builder, ensuring maintenance decisions are technically sound.",
+  },
 ];
 
 const serviceAreas = [
@@ -87,7 +92,7 @@ export const About = (): JSX.Element => {
         style={{ backgroundImage: "url('/aboutusbg.jpg')" }}
       >
         <div className="relative z-10 max-w-full mx-auto pb-12 flex flex-col gap-10">
-          <Navigation textColor="text-white" />
+          <Navigation textColor="text-white" logoText="JUDEVA GROUP" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16 px-2">
             <h1
@@ -459,7 +464,7 @@ export const About = (): JSX.Element => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <Footer logoText="JUDEVA GROUP" />
     </div>
   );
 };

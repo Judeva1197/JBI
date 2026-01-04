@@ -23,6 +23,10 @@ export const Contact = (): JSX.Element => {
     }
   };
 
+  const redirectToInspectionForm = () => {
+    window.location.href = 'https://formitize.co/Qk6V6-GB';
+  }
+
   return (
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       {/* Hero Section */}
@@ -33,7 +37,7 @@ export const Contact = (): JSX.Element => {
         <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10 max-w-full mx-auto px-2 lg:px-20 pb-12 flex flex-col gap-10">
-          <Navigation textColor="text-white" />
+          <Navigation textColor="text-white" logoText="JUDEVA GROUP" />
 
           <div className="flex flex-col items-center text-center gap-6 py-16 px-2">
             <h1
@@ -173,7 +177,7 @@ export const Contact = (): JSX.Element => {
             <Button
               data-aos="fade-up"
               data-aos-duration="900"
-              onClick={scrollToInspectionForm}
+              onClick={redirectToInspectionForm}
               className="w-fit p-6 max-w-xs sm:max-w-sm bg-white/20 border border-white text-white text-lg transition-all ease-in-out duration-[360ms] hover:bg-white/30"
             >
               BOOK NOW
@@ -183,7 +187,7 @@ export const Contact = (): JSX.Element => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <Footer logoText="JUDEVA GROUP" />
     </div>
   );
 };
