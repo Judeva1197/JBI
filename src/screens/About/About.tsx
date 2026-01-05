@@ -5,82 +5,43 @@ import GlareHover from "../../components/ReactBit/GlareHoverEffect";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
 
-const navigationItems = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
-  { label: "BUILDING & FM", href: "/building-management" },
-  { label: "CONTACT US", href: "/contact" },
+const setsUsApartPoints = [
+  { title: "Licensed Builder Oversight", desc: "on every inspection and management service" },
+  { title: "Real-World Construction Experience", desc: "not just reporting" },
+  { title: "Quality-Focused Outcomes", desc: "durable finishes, compliant works" },
+  { title: "Clear Reporting & Practical Advice", desc: "for owners and managers" },
+  { title: "Scalable Management Model", desc: "suitable for small to large complexes" },
 ];
 
-const whyChooseUsPoints = [
-  "Licensed Builder conducting all inspections",
-  "Clear, easy-to-read reports with photos, recommendations & risk ratings",
-  "Thermal imaging & moisture detection on premium inspections",
-  "Fast turnaround",
-  "Fixed pricing with no hidden costs",
-  "Independent assessment — no repair upselling",
-  "Backed by real construction experience",
+const inspectionServices = [
+  "Pre-purchase & pre-sale inspections",
+  "Defect & warranty inspections",
+  "Water ingress investigations",
+  "Thermal imaging & moisture detection assessments",
+  "Detailed reports for strata, owners and insurers",
 ];
 
-const services = [
-  {
-    title: "Pre-Purchase Building Inspection",
-    description:
-      "A detailed inspection covering internal areas, external areas, roof space, underfloor (if accessible), structure, moisture, defects, maintenance issues and safety hazards. Ideal for buyers, sellers & investors.",
-  },
-  {
-    title: "Moisture & Water Ingress Investigation",
-    description:
-      "Advanced inspections using moisture meters and thermal imaging to identify hidden leaks, moisture intrusion, and potential mould-risk areas. Perfect for strata, homeowners & remedial investigations.",
-  },
-  {
-    title: "Dilapidation Reporting",
-    description:
-      "A photographic and written condition report of neighbouring properties before & after construction works. Common for builders, developers & owners needing protection from damage claims.",
-  },
-  {
-    title: "Thermal Imaging & Moisture Detection",
-    description:
-      "Enhance your pre-purchase or pre-sale inspection with advanced thermal imaging and moisture testing. This add-on helps identify hidden leaks, dampness, insulation gaps, roof moisture and early-stage water damage that aren’t visible to the eye.",
-  },
-  {
-    title: "BUILDING & FACILITIES MANAGEMENT",
-    description:
-      "Judeva provides builder-led Building & Facilities Management with practical oversight, clear communication, and cost-effective outcomes. Every building is overseen by a licensed NSW builder, ensuring maintenance decisions are technically sound.",
-  },
+const managementServices = [
+  "Building condition assessments",
+  "Preventative maintenance planning",
+  "Contractor coordination & supervision",
+  "Compliance oversight (fire, safety, essential services)",
+  "Budget planning & asset lifecycle advice",
 ];
 
-const serviceAreas = [
-  "Western Sydney",
-  "Inner West",
-  "Hills District",
-  "Parramatta",
-  "Blacktown",
-  "Penrith",
-  "Liverpool",
-  "Northern Districts",
-  "Sydney Wide"
+const remedialServices = [
+  "Water ingress repairs",
+  "Concrete crack injection",
+  "Sealant & waterproofing repairs",
+  "Gyprock, painting & minor building works",
+  "Make-good works following defects",
 ];
 
-const eddyCredentials = [
-  "NSW Licensed Builder",
-  "Cert IV & Diploma in Building & Construction",
-  "Master Builders Association Inspection Training",
-  "Head of Building & Facilities Management",
-  "Experience across: defects, water ingress, structural issues",
-  "Hands-on knowledge of construction tolerances & safety",
-];
-
-const tools = [
-  "Professional moisture meters",
-  "Thermal imaging cameras",
-  "Endoscopic cavity cameras",
-  "Laser measurers",
-  "Digital reporting & CRM tools",
-  "High-Resolution Photography & Reporting Software",
-  "Surface Checking Tools",
-  "Dye Testing Kit",
-  "Moisture Detection Scanner"
+const whoWeWorkWith = [
+  "Strata committees & owners corporations",
+  "Property & strata managers",
+  "Commercial building owners",
+  "Developers & asset investors",
 ];
 
 export const About = (): JSX.Element => {
@@ -101,13 +62,13 @@ export const About = (): JSX.Element => {
               data-aos-easing="linear"
               data-aos-duration="500"
             >
-              ABOUT US
+              ABOUT JUDEVA
             </h1>
           </div>
         </div>
       </section>
 
-      {/* About JBI Section */}
+      {/* Who We Are Section */}
       <section className="relative py-6 lg:py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -122,7 +83,7 @@ export const About = (): JSX.Element => {
             >
               <img
                 className="w-full rounded-[10px] object-cover"
-                alt="Building inspection"
+                alt="Who We Are"
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"
               />
             </GlareHover>
@@ -134,122 +95,24 @@ export const About = (): JSX.Element => {
                 data-aos-easing="linear"
                 data-aos-duration="500"
               >
-                About Judeva Building Inspections (JBI)
+                Who We Are
               </h2>
-              <p
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-4"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                Judeva Building Inspections (JBI) is a Sydney-based inspection service specialising in pre-purchase building inspections, moisture & water ingress diagnostics, thermal imaging and detailed condition reporting for apartments, houses and townhouses.
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-4" data-aos="fade-up" data-aos-duration="1000">
+                JUDEVA is a builder-led building inspection and building & facilities management company, delivering practical, honest and high-quality outcomes for strata, commercial and residential assets across Sydney NSW.
               </p>
-              <p
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-4"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                We combine licensed building expertise with modern equipment and clear, practical reporting. Our goal is simple: give clients certainty, protect their investment and identify issues before they become major problems.
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-4" data-aos="fade-up" data-aos-duration="1000">
+                Founded and led by a licensed builder, JUDEVA combines hands-on construction knowledge with proactive management systems to ensure buildings are inspected correctly, maintained efficiently and repaired to a high standard.
               </p>
-              <p
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                JBI operates as part of the Judeva Pty Ltd group — a licensed building and remedial business with hands-on experience in construction, facilities management, defect rectification and multi-site building operations across NSW.
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl" data-aos="fade-up" data-aos-duration="1000">
+                We don’t just identify issues, we understand how buildings perform, how they fail and how to fix them properly.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Eddy Section */}
-      <section className="relative py-6 lg:py-32 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2
-                className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-6"
-                data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="500"
-              >
-                About Eddy – Licensed Builder & Inspector
-              </h2>
-              <p
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-6"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                Hi, I’m Eddy, a Licensed Builder with years of practical experience in residential construction, quality checks and identifying building issues before they become major problems. This mix of real-world building knowledge and inspection skills gives you a level of detail and accuracy many inspectors don’t offer.
-
-
-              </p>
-              <p
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-6"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                My reports are written in simple, easy-to-understand language so you know exactly what’s going on with your property and what steps to take next. Buyers, owners and investors rely on my inspections for peace of mind, clarity and strong decision-making.
-
-
-              </p>
-
-              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mb-6"
-                data-aos="fade-up"
-                data-aos-duration="1000">At Judeva Building Inspections, I focus on delivering reliable results, fast turnaround times and professional support—helping you protect your biggest investment with confidence</p>
-              <p
-                className="[font-family:'Poppins',Helvetica] font-medium text-black text-lg sm:text-xl mb-4"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                My background includes:
-              </p>
-              <ul className="space-y-3">
-                {eddyCredentials.map((credential, index) => (
-                  <li
-                    key={index}
-                    className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl flex items-start gap-3"
-                    data-aos="fade-left"
-                    data-aos-easing="linear"
-                    data-aos-duration={500 * (index + 1) + ""}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#154060] flex-shrink-0 mt-1 w-5 h-5">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    {credential}
-                  </li>
-                ))}
-              </ul>
-              <p
-                className="[font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl mt-6 italic"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
-                I understand buildings from the ground up — and I bring that practical experience into every inspection.
-              </p>
-            </div>
-
-            <GlareHover
-              glareColor="#ffffff"
-              glareOpacity={0.3}
-              glareAngle={-30}
-              glareSize={300}
-              transitionDuration={800}
-              playOnce={false}
-              className=""
-            >
-              <img
-                className="w-full rounded-[10px] object-cover"
-                alt="Eddy - Licensed Builder"
-                src="/owner.jpeg"
-              />
-            </GlareHover>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Judeva Section */}
-      <section className="relative py-32 px-4">
+      {/* What Sets Us Apart Section */}
+      <section className="relative py-32 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
@@ -257,11 +120,11 @@ export const About = (): JSX.Element => {
             data-aos-easing="linear"
             data-aos-duration="500"
           >
-            Why Choose Judeva?
+            What Sets Us Apart
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyChooseUsPoints.map((point, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {setsUsApartPoints.map((point, index) => (
               <Card
                 key={index}
                 className="border border-[#154060]/20 shadow-md hover:shadow-lg transition-shadow ease-in-out duration-[360ms]"
@@ -270,21 +133,27 @@ export const About = (): JSX.Element => {
                 data-aos-duration={500 * (index + 1) + ""}
               >
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-3">
-                    <span className="text-[#154060] text-2xl font-bold">✔</span>
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-[#154060] text-xl font-bold">{point.title}</h3>
                     <p className="[font-family:'Poppins',Helvetica] font-light text-black text-base">
-                      {point}
+                      {point.desc}
                     </p>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          <p className="text-center [font-family:'Poppins',Helvetica] font-light text-black text-lg sm:text-xl max-w-4xl mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000">
+            Whether it’s a defect inspection, ongoing building management or targeted remedial works, JUDEVA approaches every building as a long-term asset.
+          </p>
         </div>
       </section>
 
       {/* Our Services Section */}
-      <section className="relative py-32 px-4 bg-gray-50">
+      <section className="relative py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
@@ -295,133 +164,123 @@ export const About = (): JSX.Element => {
             Our Services
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-shadow ease-in-out duration-[360ms]"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration={1000 * index + ""}
-              >
-                <CardContent className="p-6">
-                  <div className="text-[#154060] text-3xl font-bold mb-4">
-                    {index + 1}.
-                  </div>
-                  <h3 className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-xl mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Areas Section */}
-      <section className="relative py-32 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2
-            className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
-            data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="500"
-          >
-            Service Areas
-          </h2>
-          <p
-            className="text-center [font-family:'Poppins',Helvetica] font-light text-base sm:text-xl text-[#154060] mb-8"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            Sydney metropolitan area, including:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {serviceAreas.map((area, index) => (
-              <div
-                key={index}
-                className="text-center p-4 bg-[#154060]/5 rounded-lg hover:bg-[#154060]/10 transition-colors ease-in-out duration-[360ms]"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration={300 * (index + 1) + ""}
-              >
-                <p className="[font-family:'Poppins',Helvetica] font-medium text-[#154060] text-base">
-                  {area}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Building Inspections */}
+            <div data-aos="fade-up" data-aos-duration="1000">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-4xl">🏠</span>
+                <h3 className="text-[#154060] text-2xl font-bold">Building Inspections</h3>
+              </div>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm leading-relaxed mb-6">
+                JUDEVA provides professional building inspections using thermal imaging, moisture testing and water testing to identify defects, water ingress and performance issues.
+              </p>
+              <h4 className="font-semibold text-[#154060] text-base mb-4">Inspection services include:</h4>
+              <ul className="space-y-2 mb-6">
+                {inspectionServices.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-[#154060] mt-1">•</span>
+                    <span className="[font-family:'Poppins',Helvetica] font-light text-black text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="p-4 bg-[#154060]/5 rounded-lg border-l-4 border-[#154060]">
+                <p className="[font-family:'Poppins',Helvetica] font-medium text-[#154060] text-xs sm:text-sm">
+                  📌 Inspection enquiries are managed via our online inspection request form for fast turnaround.
                 </p>
               </div>
-            ))}
+            </div>
+
+            {/* Building & Facilities Management */}
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-4xl">🏢</span>
+                <h3 className="text-[#154060] text-2xl font-bold">Building & Facilities Management</h3>
+              </div>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm leading-relaxed mb-6">
+                Our Building & Facilities Management services are designed to protect asset value, ensure compliance and reduce reactive maintenance.
+              </p>
+              <h4 className="font-semibold text-[#154060] text-base mb-4">BM/FM services include:</h4>
+              <ul className="space-y-2 mb-6">
+                {managementServices.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-[#154060] mt-1">•</span>
+                    <span className="[font-family:'Poppins',Helvetica] font-light text-black text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm italic">
+                JUDEVA can manage both small and large buildings, scaling resources as required while maintaining direct oversight by the principal.
+              </p>
+            </div>
+
+            {/* Remedial & Maintenance Services */}
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-4xl">🛠</span>
+                <h3 className="text-[#154060] text-2xl font-bold">Remedial & Maintenance</h3>
+              </div>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm leading-relaxed mb-6">
+                To complement our inspection and management services, JUDEVA provides targeted remedial and maintenance works, ensuring issues are resolved correctly and not just patched.
+              </p>
+              <h4 className="font-semibold text-[#154060] text-base mb-4">Typical works include:</h4>
+              <ul className="space-y-2 mb-6">
+                {remedialServices.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-[#154060] mt-1">•</span>
+                    <span className="[font-family:'Poppins',Helvetica] font-light text-black text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm italic">
+                This integrated approach allows defects to be identified, scoped, repaired and verified under one experienced provider.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Process Section */}
+      {/* Our Approach Section */}
+      <section className="relative py-20 px-4 bg-[#154060] text-white text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2
+            className="[font-family:'Inter',Helvetica] font-semibold text-3xl sm:text-5xl tracking-[0] leading-tight mb-8"
+            data-aos="fade-down"
+            data-aos-duration="500"
+          >
+            Our Approach
+          </h2>
+          <p className="[font-family:'Poppins',Helvetica] font-light text-xl mb-8" data-aos="fade-up" data-aos-duration="1000">
+            JUDEVA operates with a simple philosophy:<br />
+            <span className="font-bold text-2xl block mt-4">Inspect thoroughly. Manage proactively. Repair correctly.</span>
+          </p>
+          <p className="[font-family:'Poppins',Helvetica] font-light text-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            We focus on quality workmanship, clear communication and long-term performance, helping clients avoid repeat failures and unnecessary costs.
+          </p>
+        </div>
+      </section>
+
+      {/* Who We Work With Section */}
       <section className="relative py-32 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto text-center">
           <h2
-            className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
+            className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
             data-aos="fade-down"
-            data-aos-easing="linear"
             data-aos-duration="500"
           >
-            Our Process (Simple & Efficient)
+            Who We Work With
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              "Book online or enquire",
-              "Inspection completed onsite (usually 60–90 mins)",
-              "Full written report delivered",
-              "Follow-up phone call (optional) to clarify findings",
-            ].map((step, index) => (
-              <Card
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {whoWeWorkWith.map((item, index) => (
+              <div
                 key={index}
-                className="border border-[#154060]/20 text-center"
+                className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-[#154060]/10"
                 data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration={500 * (index + 1) + ""}
+                data-aos-delay={index * 100}
               >
-                <CardContent className="p-6">
-                  <div className="text-[#154060] text-4xl font-bold mb-4">
-                    {index + 1}
-                  </div>
-                  <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm">
-                    {step}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tools & Technology Section */}
-      <section className="relative py-6 lg:py-32 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2
-            className="text-center [font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-12"
-            data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="500"
-          >
-            Tools & Technology We Use
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {tools.map((tool, index) => (
-              <Card
-                key={index}
-                className="border border-[#154060]/20 text-center hover:shadow-lg transition-shadow ease-in-out duration-[360ms]"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration={400 * (index + 1) + ""}
-              >
-                <CardContent className="p-6">
-                  <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm">
-                    {tool}
-                  </p>
-                </CardContent>
-              </Card>
+                <p className="[font-family:'Poppins',Helvetica] font-medium text-[#154060] text-lg">
+                  {item}
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -463,9 +322,37 @@ export const About = (): JSX.Element => {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section className="relative py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2
+            className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-3xl sm:text-5xl tracking-[0] leading-tight mb-8"
+            data-aos="fade-down"
+            data-aos-duration="500"
+          >
+            Contact JUDEVA
+          </h2>
+          <div className="space-y-6 text-black">
+            <p className="[font-family:'Poppins',Helvetica] font-light text-lg sm:text-xl" data-aos="fade-up">
+              For building inspections, please submit an enquiry via our <Link to="/contact" className="text-[#154060] font-medium underline">online inspection form</Link>.
+            </p>
+            <p className="[font-family:'Poppins',Helvetica] font-light text-lg sm:text-xl" data-aos="fade-up">
+              For Building & Facilities Management or remedial services, contact us directly.
+            </p>
+            <div className="flex flex-col gap-4 mt-8" data-aos="fade-up" data-aos-delay="200">
+              <a href="mailto:eddy@judeva.com.au" className="[font-family:'Poppins',Helvetica] text-xl sm:text-2xl font-medium text-[#154060] hover:underline">
+                📧 eddy@judeva.com.au
+              </a>
+              <a href="tel:0432800928" className="[font-family:'Poppins',Helvetica] text-xl sm:text-2xl font-medium text-[#154060] hover:underline">
+                📞 0432 800 928
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <Footer logoText="JUDEVA GROUP" />
     </div>
   );
 };
-
