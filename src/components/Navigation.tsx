@@ -75,7 +75,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       </div>
 
       {/* Mobile Navigation */}
-      <div className="flex lg:hidden flex-wrap items-center justify-between px-4 sm:px-6 py-3 bg-[#367c9c] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50 min-h-[70px]">
+      <div className="flex lg:hidden flex-wrap items-center justify-between px-4 sm:px-6 py-3 bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50 min-h-[70px]">
         {/* Mobile Logo */}
         <Link to="/">
           {logoText ? (
