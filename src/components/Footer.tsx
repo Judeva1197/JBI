@@ -27,9 +27,9 @@ export const Footer: React.FC<FooterProps> = ({ logoText }): JSX.Element => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
                     <div className="flex flex-col mt-[-35px]">
                         {logoText ? (
-                            <h2 className="text-3xl sm:text-4xl font-bold [font-family:'Inter',Helvetica] text-white tracking-widest mb-5 mt-8 whitespace-nowrap">
+                            <h1 className="text-3xl sm:text-4xl font-bold [font-family:'Inter',Helvetica] text-white tracking-widest mb-5 mt-8 whitespace-nowrap">
                                 {logoText}
-                            </h2>
+                            </h1>
                         ) : (
                             <img
                                 className="w-56 sm:w-72 h-auto object-contain mb-5"
