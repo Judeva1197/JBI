@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
@@ -15,6 +16,12 @@ const navigationItems = [
 ];
 
 export const Home = (): JSX.Element => {
+  usePageMeta(
+    "Professional Building Inspection Company | Judeva",
+    "Judeva, a professional building inspection company in Sydney, offers pre-purchase, pre-sale, water leak inspection and building dilapidation reports. Call now!",
+    "Building Inspection Company, pre-purchase property inspection, pre-sale property inspection, water leak inspection, building dilapidation report",
+  );
+
   const contentRef = useRef<HTMLDivElement | null>(null);
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const inspectionFormRef = useRef<HTMLDivElement | null>(null);
@@ -91,6 +98,7 @@ export const Home = (): JSX.Element => {
   }, []);
 
   return (
+    
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       <section
         className="relative w-full min-h-[10vh] xl:min-h-[100vh] text-white bg-cover lg:bg-cover bg-center"
