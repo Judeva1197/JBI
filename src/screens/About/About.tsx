@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
@@ -45,6 +46,11 @@ const whoWeWorkWith = [
 ];
 
 export const About = (): JSX.Element => {
+  usePageMeta(
+    "About Sydney's Trusted Building Inspection Company | Judeva",
+    "Learn about Judeva, Sydney's trusted building inspection company offering property inspections, expert advice & practical solutions. Get in touch today.",
+  );
+
   return (
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       {/* Hero Section */}
@@ -62,7 +68,7 @@ export const About = (): JSX.Element => {
               data-aos-easing="linear"
               data-aos-duration="500"
             >
-              ABOUT JUDEVA
+              About Judeva
             </h1>
           </div>
         </div>
