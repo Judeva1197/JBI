@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
@@ -7,13 +6,6 @@ import GlareHover from "../../components/ReactBit/GlareHoverEffect";
 import { Inspection } from "../../components/Inspection";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
-
-const navigationItems = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
-  { label: "BUILDING & FM", href: "/building-management" },
-  { label: "CONTACT US", href: "/contact" },
-];
 
 export const Home = (): JSX.Element => {
   usePageMeta(
@@ -98,7 +90,6 @@ export const Home = (): JSX.Element => {
   }, []);
 
   return (
-    
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
       <section
         className="relative w-full min-h-[10vh] xl:min-h-[100vh] text-white bg-cover lg:bg-cover bg-center"
