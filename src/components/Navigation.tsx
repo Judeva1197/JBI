@@ -41,11 +41,11 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* Desktop Navigation - Solid Blue Fixed */}
       <div className="hidden lg:flex flex-wrap items-center justify-between px-10 xl:px-40 h-[80px] bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50" style={{ zIndex: "100000" }}>
         {/* Logo */}
-        <Link to="/">
+        <Link to="/" aria-label="Home">
           {logoText ? (
-            <h1 className="[font-family:'Inter',Helvetica] font-bold text-white text-2xl tracking-tight cursor-pointer whitespace-nowrap">
+            <span className="[font-family:'Inter',Helvetica] font-bold text-white text-2xl tracking-tight cursor-pointer whitespace-nowrap">
               {logoText}
-            </h1>
+            </span>
           ) : (
             <img
               className="w-32 h-auto object-contain cursor-pointer"
@@ -77,11 +77,11 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* Mobile Navigation */}
       <div className="flex lg:hidden flex-wrap items-center justify-between px-4 sm:px-6 py-3 bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50 min-h-[70px]">
         {/* Mobile Logo */}
-        <Link to="/">
+        <Link to="/" aria-label="Home">
           {logoText ? (
-            <h1 className="[font-family:'Inter',Helvetica] font-bold text-white text-xl tracking-tight cursor-pointer whitespace-nowrap">
+            <span className="[font-family:'Inter',Helvetica] font-bold text-white text-xl tracking-tight cursor-pointer whitespace-nowrap">
               {logoText}
-            </h1>
+            </span>
           ) : (
             <img
               className="w-24 sm:w-28 h-auto object-contain cursor-pointer"
