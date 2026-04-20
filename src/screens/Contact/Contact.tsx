@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Inspection } from "../../components/Inspection";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
@@ -15,6 +15,11 @@ const navigationItems = [
 ];
 
 export const Contact = (): JSX.Element => {
+  usePageMeta(
+    "Get a Quote for Building Inspection in Sydney | Judeva",
+    "Contact Judeva for reliable building inspection services in Sydney. Enquire about pre-purchase, pre-sale, water leak inspection, and dilapidation reports today.",
+  );
+
   const inspectionFormRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToInspectionForm = () => {
@@ -45,7 +50,7 @@ export const Contact = (): JSX.Element => {
               data-aos="fade-down"
               data-aos-duration="500"
             >
-              GET IN TOUCH WITH US
+              PROFESSIONAL BUILDING INSPECTIONS YOU CAN TRUST
             </h1>
 
             <p className="[font-family:'Poppins',Helvetica] font-light text-white text-lg sm:text-sm" data-aos="fade-up" data-aos-duration="1000">
