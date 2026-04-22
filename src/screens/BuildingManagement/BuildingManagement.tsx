@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
@@ -38,6 +39,11 @@ const approachSteps = [
 ];
 
 export const BuildingManagement = (): JSX.Element => {
+    usePageMeta(
+        "Building & Facilities Management | Judeva",
+        "Expert building & facilities management in Sydney by Judeva, offering builder led oversight, proactive maintenance, and scalable solutions. Get in touch today.",
+    );
+
     return (
         <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
             {/* Hero Section */}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
@@ -7,14 +7,13 @@ import { Inspection } from "../../components/Inspection";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
 
-const navigationItems = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
-  { label: "BUILDING & FM", href: "/building-management" },
-  { label: "CONTACT US", href: "/contact" },
-];
-
 export const Home = (): JSX.Element => {
+  usePageMeta(
+    "Professional Building Inspection Company | Judeva",
+    "Judeva, a professional building inspection company in Sydney, offers pre-purchase, pre-sale, water leak inspection and building dilapidation reports. Call now!",
+    "Building Inspection Company, pre-purchase property inspection, pre-sale property inspection, water leak inspection, building dilapidation report",
+  );
+
   const contentRef = useRef<HTMLDivElement | null>(null);
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const inspectionFormRef = useRef<HTMLDivElement | null>(null);
