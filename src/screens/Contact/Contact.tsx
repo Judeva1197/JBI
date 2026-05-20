@@ -6,7 +6,7 @@ import { Card, CardContent } from "../../components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
-import Canonical from "../components/Canonical";
+import Canonical from "../../components/Canonical";
 
 const navigationItems = [
   { label: "HOME", href: "/" },
