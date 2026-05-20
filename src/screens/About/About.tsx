@@ -5,6 +5,7 @@ import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
+import Canonical from "../components/Canonical";
 
 const setsUsApartPoints = [
   { title: "Licensed Builder Oversight", desc: "on every inspection and management service" },
@@ -53,6 +54,7 @@ export const About = (): JSX.Element => {
 
   return (
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
+      <Canonical />
       {/* Hero Section */}
       <section
         className="relative w-full min-h-[60vh] text-white bg-cover lg:bg-contain bg-center"
