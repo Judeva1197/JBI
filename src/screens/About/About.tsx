@@ -53,6 +53,7 @@ export const About = (): JSX.Element => {
 
   return (
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
+      <Canonical />
       {/* Hero Section */}
       <section
         className="relative w-full min-h-[60vh] text-white bg-cover lg:bg-contain bg-center"
