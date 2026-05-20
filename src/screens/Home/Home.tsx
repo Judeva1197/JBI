@@ -6,6 +6,8 @@ import GlareHover from "../../components/ReactBit/GlareHoverEffect";
 import { Inspection } from "../../components/Inspection";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
+import Canonical from "../components/Canonical";
+
 
 export const Home = (): JSX.Element => {
   usePageMeta(
@@ -91,6 +93,7 @@ export const Home = (): JSX.Element => {
 
   return (
     <div className="bg-white w-full relative overflow-x-hidden scroll-smooth">
+       <Canonical />
       <section
         className="relative w-full min-h-[10vh] xl:min-h-[100vh] text-white bg-cover lg:bg-cover bg-center"
         style={{ backgroundRepeat: "no-repeat", backgroundImage: `url('${isMobile ? '/aboutusbg.jpg' : '/funtitled-design--19--1.png'}')` }}
