@@ -6,7 +6,7 @@ import GlareHover from "../../components/ReactBit/GlareHoverEffect";
 import { Inspection } from "../../components/Inspection";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
-import Canonical from "../components/Canonical";
+import Canonical from "../../components/Canonical";
 
 
 export const Home = (): JSX.Element => {
