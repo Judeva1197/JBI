@@ -5,7 +5,7 @@ import { Card, CardContent } from "../../components/ui/card";
 import GlareHover from "../../components/ReactBit/GlareHoverEffect";
 import { Navigation } from "../../components/Navigation";
 import { Footer } from "../../components/Footer";
-import Canonical from "../components/Canonical";
+import Canonical from "../../components/Canonical";
 
 const setsUsApartPoints = [
   { title: "Licensed Builder Oversight", desc: "on every inspection and management service" },
