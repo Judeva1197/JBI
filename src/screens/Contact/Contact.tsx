@@ -66,6 +66,7 @@ export const Contact = (): JSX.Element => {
       <section className="relative py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+           {/* PHONE CARD */}
             <Card
               data-aos="fade-up"
               data-aos-duration="500"
@@ -75,39 +76,62 @@ export const Contact = (): JSX.Element => {
                 <div className="w-16 h-16 rounded-full bg-[#154060] flex items-center justify-center">
                   <Phone className="w-8 h-8 text-white" />
                 </div>
+
                 <h3 className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-xl">
                   PHONE
                 </h3>
-                <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm">
+
+                <a
+                  href="tel:0432800928"
+                  className="[font-family:'Poppins',Helvetica] font-light text-black text-sm hover:text-[#154060] transition-colors duration-300"
+                >
                   0432 800 928
-                </p>
+                </a>
               </CardContent>
             </Card>
 
-            <Card
-              data-aos="fade-up"
-              data-aos-duration="700"
-              className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <CardContent className="p-8 flex flex-col items-center text-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-[#154060] flex items-center justify-center">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-xl">
-                  EMAIL
-                </h3>
-                <div className="flex flex-col gap-1 w-full items-center">
-                  <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm break-all pt-2">
-                    <span className="font-medium">BM / FM:</span> <br />
+      {/* EMAIL CARD */}
+          <Card
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <CardContent className="p-8 flex flex-col items-center text-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-[#154060] flex items-center justify-center">
+                <Mail className="w-8 h-8 text-white" />
+              </div>
+
+              <h3 className="[font-family:'Inter',Helvetica] font-semibold text-[#154060] text-xl">
+                EMAIL
+              </h3>
+
+              <div className="flex flex-col gap-3 w-full items-center">
+                <div className="text-center">
+                  <span className="font-medium text-sm">BM / FM:</span>
+                  <br />
+
+                  <a
+                    href="mailto:eddy@judeva.com.au"
+                    className="[font-family:'Poppins',Helvetica] font-light text-black text-sm break-all hover:text-[#154060] transition-colors duration-300"
+                  >
                     eddy@judeva.com.au
-                  </p>
-                  <p className="[font-family:'Poppins',Helvetica] font-light text-black text-sm break-all">
-                    <span className="font-medium">Inspections:</span> <br />
-                    inspections@judeva.com.au
-                  </p>
+                  </a>
                 </div>
-              </CardContent>
-            </Card>
+
+                <div className="text-center">
+                  <span className="font-medium text-sm">Inspections:</span>
+                  <br />
+
+                  <a
+                    href="mailto:inspections@judeva.com.au"
+                    className="[font-family:'Poppins',Helvetica] font-light text-black text-sm break-all hover:text-[#154060] transition-colors duration-300"
+                  >
+                    inspections@judeva.com.au
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
             <Card
               data-aos="fade-up"
