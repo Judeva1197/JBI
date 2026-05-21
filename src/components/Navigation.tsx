@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
@@ -16,12 +16,14 @@ interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
-
   logoSrc = "/logoMain.png",
   logoText,
   textColor = "text-red",
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // CHANGE PHONE NUMBER HERE
+  const phoneNumber = "+61 412 345 678";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,14 +34,16 @@ export const Navigation: React.FC<NavigationProps> = ({
   };
 
   const redirectToInspectionForm = () => {
-    window.location.href = 'https://formitize.co/Qk6V6-GB';
-  }
-
+    window.location.href = "https://formitize.co/Qk6V6-GB";
+  };
 
   return (
     <>
-      {/* Desktop Navigation - Solid Blue Fixed */}
-      <div className="hidden lg:flex flex-wrap items-center justify-between px-10 xl:px-40 h-[80px] bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50" style={{ zIndex: "100000" }}>
+      {/* Desktop Navigation */}
+      <div
+        className="hidden lg:flex flex-wrap items-center justify-between px-10 xl:px-40 h-[80px] bg-[#073154] border-b border-white/10 fixed top-0 left-0 right-0 w-full z-50"
+        style={{ zIndex: "100000" }}
+      >
         {/* Logo */}
         <Link to="/" aria-label="Home">
           {logoText ? (
@@ -61,35 +65,46 @@ export const Navigation: React.FC<NavigationProps> = ({
             <Link
               key={index}
               to={item.href}
-              className={`relative [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[normal] hover:tracking-wide transition-all ease-in-out duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full`}
+              className="relative [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[normal] hover:tracking-wide transition-all ease-in-out duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-
-        {/* Desktop Right Side */}
-          <div className="flex items-center gap-4">
-            {/* Call Button */}
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
+           {/* Clickable Phone Number with Icon */}
             <a
-              href="tel:0432800928"
-              className="flex items-center gap-2 text-white text-sm hover:text-cyan-300 transition-all duration-300"
+              href="tel:+61412345678"
+              className="flex items-center gap-2 text-white font-medium text-sm hover:text-cyan-300 transition-all duration-300"
             >
-              <Phone size={18} />
-              <span>0432 800 928</span>
-            </a>
-          
-            {/* Book Now Button */}
-            <Button
-              onClick={redirectToInspectionForm}
-              className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30"
-            >
-              BOOK NOW
-            </Button>
-          </div>
-        
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.129a11.042 11.042 0 005.516 5.516l1.129-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
 
+              <span>{phoneNumber}</span>
+            </a>
+
+          {/* Desktop Book Now Button */}
+          <Button
+            onClick={redirectToInspectionForm}
+            className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30"
+          >
+            BOOK NOW
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -109,26 +124,40 @@ export const Navigation: React.FC<NavigationProps> = ({
           )}
         </Link>
 
-        {/* Mobile Hamburger Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="flex flex-col items-center justify-center gap-1.5 p-2"
-          aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""
+        {/* Mobile Right Side */}
+        <div className="flex items-center gap-3">
+          {/* Mobile Phone */}
+          <a
+            href="tel:+61412345678"
+            className="text-white text-sm font-medium"
+          >
+            Call
+          </a>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={toggleMenu}
+            className="flex flex-col items-center justify-center gap-1.5 p-2"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
               }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
               }`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
-          />
-        </button>
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Off-Canvas Menu */}
@@ -166,15 +195,29 @@ export const Navigation: React.FC<NavigationProps> = ({
               ))}
             </nav>
 
+            {/* Mobile Phone Number */}
+            <div className="px-8 pb-4">
+              <a
+                href="tel:+61412345678"
+                className="block w-full text-center py-3 border border-white text-white rounded-md"
+              >
+                {phoneNumber}
+              </a>
+            </div>
+
             {/* Mobile Book Now Button */}
             <div className="px-8 pb-8">
-              <Button className="w-full bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+              <Button
+                onClick={redirectToInspectionForm}
+                className="w-full bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30"
+              >
                 BOOK NOW
               </Button>
             </div>
           </div>
         </>
       )}
+
       <div className="h-[70px] lg:h-[100px] w-full bg-transparent"></div>
     </>
   );
