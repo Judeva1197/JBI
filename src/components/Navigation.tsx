@@ -68,28 +68,10 @@ export const Navigation: React.FC<NavigationProps> = ({
           ))}
         </nav>
 
-
-        {/* Desktop Right Side */}
-          <div className="flex items-center gap-4">
-            {/* Call Button */}
-            <a
-              href="tel:0432800928"
-              className="flex items-center gap-2 text-white text-sm hover:text-cyan-300 transition-all duration-300"
-            >
-              <Phone size={18} />
-              <span>0432 800 928</span>
-            </a>
-          
-            {/* Book Now Button */}
-            <Button
-              onClick={redirectToInspectionForm}
-              className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30"
-            >
-              BOOK NOW
-            </Button>
-          </div>
-        
-
+        {/* Desktop Book Now Button */}
+        <Button onClick={redirectToInspectionForm} className="min-w-[120px] bg-white/10 border border-white text-white text-sm transition-all ease-in-out duration-[360ms] hover:bg-white/30">
+          BOOK NOW
+        </Button>
       </div>
 
       {/* Mobile Navigation */}
