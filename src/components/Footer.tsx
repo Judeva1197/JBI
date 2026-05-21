@@ -48,10 +48,10 @@ export const Footer: React.FC<FooterProps> = ({ logoText }): JSX.Element => {
                             CONTACT
                         </h3>
                         <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                            EMAIL: eddy@judeva.com.au
+                           <a href="mailto:eddy@judeva.com.au" target="blank"> EMAIL: eddy@judeva.com.au</a>
                         </p>
                         <p className="[font-family:'Poppins',Helvetica] font-light text-base sm:text-sm">
-                            PHONE: 0432 800 928
+                            <a href="tel:0432 800 928" target="blank">PHONE: 0432 800 928</a>
                         </p>
                         <Button onClick={redirectToInspectionForm} className="w-fit mt-2 bg-white/20 border border-white text-white transition-all ease-in-out duration-[360ms] hover:bg-white/30">
                             ENQUIRE NOW
