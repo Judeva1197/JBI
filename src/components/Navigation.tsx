@@ -128,7 +128,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         <div className="flex items-center gap-3">
           {/* Mobile Phone */}
           <a
-            href="tel:+61412345678"
+            href="tel:0432 800 928"
             className="text-white text-sm font-medium"
           >
             Call
