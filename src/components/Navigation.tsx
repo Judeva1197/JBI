@@ -76,7 +76,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         <div className="flex items-center gap-4">
            {/* Clickable Phone Number with Icon */}
             <a
-              href="tel:+61412345678"
+              href="tel:0432 800 928"
               className="flex items-center gap-2 text-white font-medium text-sm hover:text-cyan-300 transition-all duration-300"
             >
               <svg
@@ -94,7 +94,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 />
               </svg>
 
-              <span>{phoneNumber}</span>
+              <span>0432 800 928</span>
             </a>
 
           {/* Desktop Book Now Button */}
